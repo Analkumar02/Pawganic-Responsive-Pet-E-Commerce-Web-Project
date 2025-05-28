@@ -804,23 +804,27 @@ thead {
   border-top-right-radius: 4px;
   border-right: none;
 }
-.wishlist-area .wishlist-table .wl-rounded-table tbody tr .wish-act {
+.wishlist-area .wishlist-table .wl-rounded-table tbody tr .wl-img-cell {
+  padding: 5px 10px;
+  min-width: 150px;
+}
+.wishlist-area .wishlist-table .wl-rounded-table tbody tr .wl-img-cell .wish-act {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   gap: 20px;
 }
-.wishlist-area .wishlist-table .wl-rounded-table tbody tr .wish-act .btn {
-  width: 120px;
-  font-size: 16px;
-  background-color: var(--btn-color);
-  justify-content: center;
-  color: var(--color-white-default);
-  padding: 15px 15px 13px;
+.wishlist-area .wishlist-table .wl-rounded-table tbody tr .wl-img-cell .wish-act .pr-del {
+  max-width: 20px;
 }
-.wishlist-area .wishlist-table .wl-rounded-table tbody tr .wl-img-cell {
-  padding: 0.5rem 1rem;
-  min-width: 150px;
+.wishlist-area .wishlist-table .wl-rounded-table tbody tr .wl-img-cell .wish-act .btn {
+  background-color: var(--btn-color);
+  color: var(--color-white-default);
+  font-size: 16px;
+  padding: 10px 20px 8px;
+  max-width: 120px;
+  justify-content: center;
+  line-height: 1;
 }
 .wishlist-area .wishlist-table .wl-rounded-table tbody tr .wl-img-cell img {
   max-height: 90px;
@@ -899,10 +903,98 @@ thead {
     color: var(--theme-secondary);
     font-size: 24px;
   }
-  .wishlist-area h2 .empty-msg .btn {
+  .wishlist-area .wishlist-table .wl-rounded-table {
+    display: block;
     width: 100%;
+    border-left: none;
+    border-right: none;
+  }
+  .wishlist-area .wishlist-table .wl-rounded-table thead {
+    display: none;
+  }
+  .wishlist-area .wishlist-table .wl-rounded-table tbody {
+    display: block;
+    width: 100%;
+  }
+  .wishlist-area .wishlist-table .wl-rounded-table tbody tr {
+    display: block;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--color-gray-6);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    background: #fff;
+    padding: 1rem 0.5rem;
+    font-size: 12px;
+  }
+  .wishlist-area .wishlist-table .wl-rounded-table tbody tr .wl-img-cell {
+    text-align: left;
+    margin-bottom: 0.5rem;
+    border-top: 0;
+  }
+  .wishlist-area .wishlist-table .wl-rounded-table tbody tr .wl-img-cell .wish-act .btn {
+    font-size: 12px;
+    padding: 7px 15px 5px;
+  }
+  .wishlist-area .wishlist-table .wl-rounded-table tbody tr .wl-img-cell img {
+    margin: 0;
+    max-height: 30px;
+  }
+  .wishlist-area .wishlist-table .wl-rounded-table tbody tr .wl-img-cell:last-child {
+    margin-bottom: 0;
+    border-bottom: 0;
+  }
+  .wishlist-area .wishlist-table .wl-rounded-table tbody tr .wl-title-cell {
+    margin-bottom: 0.5rem;
+    border-top: 0;
+  }
+  .wishlist-area .wishlist-table .wl-rounded-table tbody tr .wl-title-cell a {
     max-width: 200px;
-    justify-content: center;
+  }
+  .wishlist-area .wishlist-table .wl-rounded-table tbody tr .wl-title-cell:last-child {
+    margin-bottom: 0;
+  }
+  .wishlist-area .wishlist-table .wl-rounded-table tbody tr .wl-text-cell {
+    text-align: left !important;
+    margin-bottom: 0.5rem;
+    border-top: 0;
+  }
+  .wishlist-area .wishlist-table .wl-rounded-table tbody tr .wl-text-cell .quantity-box {
+    display: flex;
+    text-align: end !important;
+    max-width: 125px;
+  }
+  .wishlist-area .wishlist-table .wl-rounded-table tbody tr .wl-text-cell .quantity-box .qty-btn {
+    width: 26px;
+    height: 26px;
+    font-size: 22px;
+  }
+  .wishlist-area .wishlist-table .wl-rounded-table tbody tr .wl-text-cell:last-child {
+    margin-bottom: 0;
+  }
+  .wishlist-area .wishlist-table .wl-rounded-table td,
+  .wishlist-area .wishlist-table .wl-rounded-table th {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: right;
+    width: 100%;
+    border: none;
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    box-sizing: border-box;
+  }
+  .wishlist-area .wishlist-table .wl-rounded-table td a,
+  .wishlist-area .wishlist-table .wl-rounded-table th a {
+    text-align: end;
+  }
+  .wishlist-area .wishlist-table .wl-rounded-table td[data-label]::before,
+  .wishlist-area .wishlist-table .wl-rounded-table th[data-label]::before {
+    content: attr(data-label) ": ";
+    font-weight: bold;
+    display: block;
+    margin-bottom: 2px;
+    color: #333;
   }
 }
 /* Footer Section */

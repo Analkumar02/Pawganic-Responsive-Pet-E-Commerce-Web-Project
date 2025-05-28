@@ -60,23 +60,27 @@
                 }
             }
             tbody tr {
-                .wish-act {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    gap: 20px;
-                    .btn {
-                        width: 120px;
-                        font-size: 16px;
-                        background-color: var(--btn-color);
-                        justify-content: center;
-                        color: var(--color-white-default);
-                        padding: 15px 15px 13px;
-                    }
-                }
                 .wl-img-cell {
-                    padding: 0.5rem 1rem;
+                    padding: 5px 10px;
                     min-width: 150px;
+                    .wish-act {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 20px;
+                        .pr-del {
+                            max-width: 20px;
+                        }
+                        .btn {
+                            background-color: var(--btn-color);
+                            color: var( --color-white-default);
+                            font-size: 16px;
+                            padding: 10px 20px 8px;
+                            max-width: 120px;
+                            justify-content: center;
+                            line-height: 1;
+                        }
+                    }
                     img {
                         max-height: 90px;
                         max-width: 100%;
@@ -165,10 +169,100 @@
                 text-align: center;
                 color: var(--theme-secondary);
                 font-size: 24px;
-                .btn {
+            }
+        }
+        .wishlist-table {
+            .wl-rounded-table {
+                display: block;
+                width: 100%;
+                border-left: none;
+                border-right: none;
+                thead {
+                    display: none;
+                }
+                tbody {
+                    display: block;
                     width: 100%;
-                    max-width: 200px;
-                    justify-content: center;
+                    tr {
+                        display: block;
+                        width: 100%;
+                        margin-bottom: 1.5rem;
+                        border: 1px solid var(--color-gray-6);
+                        border-radius: 8px;
+                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+                        background: #fff;
+                        padding: 1rem 0.5rem;
+                        font-size: 12px;
+                        .wl-img-cell {
+                            text-align: left;
+                            margin-bottom: 0.5rem;
+                            border-top: 0;
+                            .wish-act {
+                                .btn {
+                                    font-size: 12px;
+                                    padding: 7px 15px 5px;
+                                }
+                            }
+                            img {
+                                margin: 0;
+                                max-height: 30px;
+                            }
+                            &:last-child {
+                                margin-bottom: 0;
+                                border-bottom: 0;
+                            }
+                        }
+                        .wl-title-cell {
+                            margin-bottom: 0.5rem;
+                            border-top: 0;
+                            a {
+                                max-width: 200px;
+                            }
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                        }
+                        .wl-text-cell {
+                            text-align: left !important;
+                            margin-bottom: 0.5rem;
+                            border-top: 0;
+                            .quantity-box {
+                                display: flex;
+                                text-align: end !important;
+                                max-width: 125px;
+                                .qty-btn {
+                                    width: 26px;
+                                    height: 26px;
+                                    font-size: 22px;
+                                }
+                            }
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+                td,
+                th {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    text-align: right;
+                    width: 100%;
+                    border: none;
+                    padding: 0.5rem 0.75rem;
+                    text-align: left;
+                    box-sizing: border-box;
+                    a {
+                        text-align: end;
+                    }
+                    &[data-label]::before {
+                        content: attr(data-label) ": ";
+                        font-weight: bold;
+                        display: block;
+                        margin-bottom: 2px;
+                        color: #333;
+                    }
                 }
             }
         }
