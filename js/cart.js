@@ -29,11 +29,36 @@ function updateCartCount() {
 
 function updateTotalPrice() {
   const cart = getCart();
-  let total = 0;
+  let subtotal = 0;
   Object.values(cart).forEach((item) => {
-    total += item.price * item.quantity;
+    subtotal += item.price * item.quantity;
   });
-  $(".pr-total-price").text(formatPrice(total));
+
+  // Shipping logic
+  let shipping = 0;
+  let shippingText = "";
+  if (subtotal < 50 && subtotal > 0) {
+    shipping = 1;
+    shippingText = formatPrice(shipping);
+  } else if (subtotal === 0) {
+    shippingText = "Free";
+  } else {
+    shipping = 0;
+    shippingText = "Free";
+  }
+
+  const total = subtotal + shipping;
+
+  $(".pr-total-price").text(formatPrice(subtotal));
+  $(".cart-total .shipping p:last-child").text(shippingText);
+
+  // Show or hide the free shipping message
+  let $shippingRow = $(".cart-total .shipping");
+  $shippingRow.next(".free-shipping-msg").remove();
+  if (subtotal < 50 && subtotal > 0) {
+    $shippingRow.after('<div class="free-shipping-msg" style="font-size: 0.95em; color: #28a745; margin-top: 2px;">Free shipping for orders over $50</div>');
+  }
+
   $(".grand-total h3:last-child").text(formatPrice(total));
 }
 
@@ -76,11 +101,11 @@ function renderCart() {
   $cartButtons.show();
   $cartTitle.text("Your cart items");
 
-  let total = 0;
+  let subtotal = 0;
 
   items.forEach((item) => {
-    const subtotal = item.price * item.quantity;
-    total += subtotal;
+    const itemSubtotal = item.price * item.quantity;
+    subtotal += itemSubtotal;
 
     const $row = $(`
       <tr class="cart-row">
@@ -106,7 +131,7 @@ function renderCart() {
           </div>
         </td>
         <td class="text-cell" data-label="Subtotal">
-          <span class="pr-subtotal-price">${formatPrice(subtotal)}</span>
+          <span class="pr-subtotal-price">${formatPrice(itemSubtotal)}</span>
         </td>
         <td class="text-center img-cell" data-label="Action">
           <a href="#" class="pr-del" data-id="${item.id}">
@@ -119,7 +144,31 @@ function renderCart() {
     $tbody.append($row);
   });
 
-  $(".pr-total-price").text(formatPrice(total));
+  // Shipping logic
+  let shipping = 0;
+  let shippingText = "";
+  if (subtotal < 50 && subtotal > 0) {
+    shipping = 1;
+    shippingText = formatPrice(shipping);
+  } else if (subtotal === 0) {
+    shippingText = "Free";
+  } else {
+    shipping = 0;
+    shippingText = "Free";
+  }
+
+  const total = subtotal + shipping;
+
+  $(".pr-total-price").text(formatPrice(subtotal));
+  $(".cart-total .shipping p:last-child").text(shippingText);
+
+  // Show or hide the free shipping message
+  let $shippingRow = $(".cart-total .shipping");
+  $shippingRow.next(".free-shipping-msg").remove();
+  if (subtotal < 50 && subtotal > 0) {
+    $shippingRow.after('<div class="free-shipping-msg">Free shipping for orders over $50</div>');
+  }
+
   $(".grand-total h3:last-child").text(formatPrice(total));
   updateCartCount();
 }

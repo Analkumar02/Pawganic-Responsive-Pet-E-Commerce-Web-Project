@@ -382,6 +382,10 @@ thead {
   border-bottom: 2px solid var(--color-gray-5);
 }
 
+.ck-divider {
+  border-bottom: 1px solid var(--theme-primary);
+}
+
 .quantity-box {
   display: inline-flex;
   align-items: center;

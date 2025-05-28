@@ -163,6 +163,11 @@
         border-radius: 10px;
         box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 15%);
         color: var(--color-black-1);
+        .free-shipping-msg {
+            font-size: 12px;
+            font-style: italic;
+            margin: -20px 0 16px;
+        }
         .cr-title {
             position: relative;
             line-height: 1;

@@ -382,6 +382,10 @@ thead {
   border-bottom: 2px solid var(--color-gray-5);
 }
 
+.ck-divider {
+  border-bottom: 1px solid var(--theme-primary);
+}
+
 .quantity-box {
   display: inline-flex;
   align-items: center;
@@ -898,6 +902,11 @@ thead {
   border-radius: 10px;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.15);
   color: var(--color-black-1);
+}
+.cart-area .cart-total .free-shipping-msg {
+  font-size: 12px;
+  font-style: italic;
+  margin: -20px 0 16px;
 }
 .cart-area .cart-total .cr-title {
   position: relative;

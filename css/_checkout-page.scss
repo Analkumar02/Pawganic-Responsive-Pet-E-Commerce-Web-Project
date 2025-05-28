@@ -16,22 +16,71 @@
                 color: var(--color-gray-8);
             }
         }
-        .order-summary {
-            background: #fff;
-            border: 1px solid #eee;
-            .btn-dark {
-                background-color: #3d2b4e;
-                border: none;
-                &:hover {
-                    background-color: #2c1f3c;
+        .form-check {
+            color: var(--color-black-1);
+            margin: 50px 0;
+            .form-check-input {
+                width: 20px;
+                height: 20px;
+                &:checked {
+                    background-color: #14AE5C;
+                    border-color: #14AE5C;
                 }
             }
-            .btn-warning {
-                background-color: #f7b500;
-                border: none;
-                color: #000;
+        }
+        .order-summary {
+            background-image: url("../images/breadcrumb-bg.webp");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: #F6F5F7;
+            border-radius: 10px;
+            font-size: 16px;
+            padding: 40px 30px;
+            .ck-pr-box {
+                gap: 15px;
+                max-width: 300px;
+                img {
+                    max-width: 60px;
+                    background-color: var(--color-gray-3);
+                    border: 1px solid var(--theme-primary);
+                    border-radius: 5px;
+                }
+            }
+            .free-shipping-msg {
+                font-size: 12px;
+                font-style: italic;
+                margin: -20px 0 16px;
+            }
+            .form-check {
+                margin: 60px 0 70px;
+                .form-check-input {
+                    &:checked {
+                        background-color: #fff;
+                        border-color: #000;
+                    }
+                    &:checked[type=radio] {
+                        background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='%2300'/></svg>");
+                    }
+                }
+            }
+            .btn-pay {
+                background: var(--theme-secondary);
+                justify-content: center;
                 &:hover {
-                    background-color: #e2a300;
+                    background: var(--theme-primary);
+                }
+                &::before {
+                    background: var(--theme-secondary);
+                }
+            }
+            .btn-cart {
+                background: var(--theme-primary);
+                justify-content: center;
+                &:hover {
+                    background: var(--theme-primary);
+                }
+                &::before {
+                    background: var(--btn-color);
                 }
             }
         }
