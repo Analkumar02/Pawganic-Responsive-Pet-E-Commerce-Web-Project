@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawganic</title>
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/baloo-bhaina-2" rel="stylesheet">
+    <link rel="stylesheet" href="css/product-des.css">
+</head>
+
+<body>
+
+    <!-- Topbar -->
+    <div class="topbar d-md-block d-none">
+        <div class="container-xl">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="topbar-left d-flex align-items-center">
+                        <div class="email d-flex align-items-center">
+                            <img src="images/mail.svg" alt="mail">
+                            <a href="mailto:" support@pawganic.com ">support@pawganic.com</a>
+                            </div>
+                             <div class=" call d-flex align-items-center ">
+                                    <img src=" images/call.svg " alt=" mail ">
+                                    <a href=" mailto: " +18002900">Need help? Call Us: + 1800 2900</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <ul class="social-icons d-flex align-items-center justify-content-end">
+                        <li>
+                            <a href="javascript:void(0)"><img src="images/facebook.svg" alt="facebook"></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)"><img src="images/x.svg" alt="x"></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)"><img src="images/youtube.svg" alt="you tube"></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)"><img src="images/tiktok.svg" alt="tiktok"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header -->
+    <header class="header sticky-top" id="header">
+        <div class="container-xl">
+            <div class="bottom-bar position-relative align-items-center justify-content-between d-flex w-100">
+                <a href="index.html" class="logo"><img src="images/logo.svg" alt="pawganic logo"></a>
+
+                <ul class="nav-menu align-items-center">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="shop.html" class="active">Shop</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">About Us</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">Reviews</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">Contact Us</a>
+                    </li>
+                </ul>
+
+                <ul class="btm-bar-right d-flex align-items-center justify-content-end">
+                    <li>
+                        <a href="# " id="search-btn"><img src="images/search.svg " alt="search "></a>
+                    </li>
+                    <li>
+                        <a href="wishlist.html" class="position-relative">
+                            <img src="images/wishlist.svg" alt="wishlist">
+                            <span class="wishlist-count">0</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cart.html" class="position-relative">
+                            <img src="images/cart.svg " alt="cart ">
+                            <span class="cart-count">0</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/user.svg " alt="user "></a>
+                    </li>
+                    <li class="d-lg-none d-block">
+                        <a href="#" class="mobile-menu-icon" id="menu-btn">
+                            <img src="images/menu.svg " alt="menu ">
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Search Box -->
+                <form action="" class="search-form align-items-center">
+                    <input type="search" id="search-box" autocomplete="off" placeholder="Search here...">
+                    <label for="search-box" class="bx bx-search"></label>
+                </form>
+                <div id="suggestions" class="suggestions-box"></div>
+
+
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Breadcrumb Area -->
+        <section class="breadcrumb-area">
+            <div class="container-xl">
+                <div class="row align-items-center position-relative">
+                    <div class="breadcrumb-box">
+                        <h2>Products Details</h2>
+                        <div class="menu-link">
+                            <a href="index.html">Home</a>
+                            <a class="active" href="shop.html">All Products</a>
+                        </div>
+                    </div>
+                    <img class="br-img" src="images/br-img.png" alt="">
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Description Area -->
+        <section class="pr-desc-area">
+        </section>
+
+        <!-- Featured Product Carousel -->
+        <section class="related-product-area">
+            <div class="container-xl">
+                <h2 class="heading">Related Products</h2>
+                <div class="swiper related-pr-slider">
+                    <div class="swiper-wrapper" id="related-products-wrapper"></div>
+                    <div class="swiper-button-next pr-slider-btn pr-slider-next"></div>
+                    <div class="swiper-button-prev pr-slider-btn pr-slider-prev"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container-xl">
+                <div class="row">
+                    <div class="col-lg-3 col-md-12 col-sm-12">
+                        <div class="footer-logo">
+                            <img src="images/pawganic-white.png" alt="pawganic logo">
+                            <p>Every bite is designed to support your pet’s overall health, from strong immunity to
+                                shiny coats and happy tummies.</p>
+                        </div>
+                        <p class="follow-text">Follow Us On:</p>
+                        <div class="footer-social">
+                            <a href="javascript:void(0)"><img src="images/facebook.svg" alt="facebook"></a>
+                            <a href="javascript:void(0)"><img src="images/x.svg" alt="x"></a>
+                            <a href="javascript:void(0)"><img src="images/youtube.svg" alt="you tube"></a>
+                            <a href="javascript:void(0)"><img src="images/tiktok.svg" alt="tiktok"></a>
+                        </div>
+                    </div>
+                    <div class="offset-lg-1 col-lg-2 col-md-4 col-sm-6">
+                        <div class="footer-links">
+                            <h5>Quick Links</h5>
+                            <ul>
+                                <li><a href="javascript:void(0)">About Us</a></li>
+                                <li><a href="javascript:void(0)">Reviews</a></li>
+                                <li><a href="javascript:void(0)">Terms & Conditions</a></li>
+                                <li><a href="javascript:void(0)">Privacy Policy</a></li>
+                                <li><a href="javascript:void(0)">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-12">
+                        <div class="footer-links">
+                            <h5>Category</h5>
+                            <ul>
+                                <li><a href="javascript:void(0)">Dog Food</a></li>
+                                <li><a href="javascript:void(0)">Cat Food</a></li>
+                                <li><a href="javascript:void(0)">Bird Food</a></li>
+                                <li><a href="javascript:void(0)">Others</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-12">
+                        <div class="footer-links">
+                            <h5>Contact</h5>
+                            <ul>
+                                <li>555 A, East Manster Street, Ready Halley Neon, Uk 4512</li>
+                                <li><a href="tel:+001234567844">+00 123 45678 44</a></li>
+                                <li><a href="mailto:support@pawganic.com">support@pawganic.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-xl">
+            <div class="divider"></div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container-xl">
+                <div class="ft-btm-content">
+                    <div class="copyright-text">
+                        <p>Copyright © 2025. All Rights Reserved.</p>
+                    </div>
+                    <div class="payment-methods">
+                        <img src="images/payment.png" alt="payment methods">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js "></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script src="js/main.js"></script>
+    <script src="js/product-desc.js"></script>
+
+</body>
+
+</html>

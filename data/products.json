@@ -1,0 +1,340 @@
+{
+    "products": [{
+            "id": "dog_1",
+            "name": "Pawganic Ring Durable Dog Chew Toy for Aggressive Chewers, Real Bacon, Made in USA, Small",
+            "category": "Dog Food",
+            "originalPrice": 30.00,
+            "offerPrice": 20.00,
+            "shortDesc": "Dogs love to chew, especially on stuff that’s flavored with real bacon. The pocket for peanut butter takes it to the next level.",
+            "description": "Introducing the Benebone Ring Bone Dog Chew Toy! If you're searching for a flavorful and long-lasting chew toy that your dog will love, look no further. This chew toy is made from durable nylon and infused with the mouthwatering taste of real bacon throughout. It's the perfect choice for dogs who enjoy chewing and biting, while also helping to redirect destructive behavior. Ideal for heavy chewers!",
+            "keyBenefits": [
+                "<strong>Durable Design:</strong> Made for aggressive chewers, ensuring long-lasting playtime.",
+                "<strong>Real Bacon Flavor:</strong> Infused with real bacon for irresistible taste.",
+                "<strong>Made in USA:</strong> Crafted with high-quality materials sourced in the USA.",
+                "<strong>Small Size:</strong> Perfect for small to medium-sized dogs.",
+                "<strong>Promotes Dental Health:</strong> Helps clean teeth and freshen breath while chewing."
+            ],
+            "ingredients": "",
+            "rating": 4.5,
+            "tags": ["featured", "trending"],
+            "images": ["images/dog_1-1.webp", "images/dog_1-2.webp", "images/dog_1-3.webp", "images/dog_1-4.webp", "images/dog_1-5.webp"]
+        },
+        {
+            "id": "dog_2",
+            "name": "Pawganic Brushing Chews Daily Dental Dog Treats, Chicken Flavor, Large, 25 Count",
+            "category": "Dog Food",
+            "originalPrice": 56.00,
+            "offerPrice": 36.00,
+            "shortDesc": "If you love getting up close and personal with your dog, you can help freshen their breath with Milk-Bone Brushing Chews Daily Dental Dog Treats. While your canine companion enjoys these delicious dog chews, the scrubbing action helps clean their teeth and reduce bad breath. ",
+            "description": "Pawganic Original Brushing Chews are specially designed dental treats for large dogs, featuring a scrubbing action that helps clean teeth, freshen breath, and reduce tartar buildup. Each pack contains five 8.1-ounce bags, totaling 30 bones, all made with chicken flavor and formulated with calcium to support strong bones and teeth. With no artificial flavors or fillers, these treats are Veterinary Oral Health Council (VOHC) accepted, ensuring your furry friend enjoys a healthy and tasty treat.",
+            "keyBenefits": [
+                "<strong>NO NASTY ADDITIVES:</strong> Free from artificial flavors and fillers for a guilt - free treat.",
+                "<strong>DAILY DENTAL DELIGHT:</strong> 48 mini chews to keep your dog 's dental health in check every day.",
+                "<strong>NUTRIENT RICH FORMULA:</strong> Formulated with calcium to support strong bones and teeth.",
+                "<strong>HEALTHY TEETH HAPPY PUP:</strong> Scrubbing action effectively cleans teeth and freshens breath.",
+                "<strong>PERFECTLY SIZED FOR SMALL DOGS:</strong> Idealfor dogs weighing 5 - 24 lbs, ensuring every pup can enjoy."
+            ],
+            "ingredients": "DENTAL HEALTH",
+            "rating": 5.0,
+            "tags": ["trending", "featured"],
+            "images": ["images/dog_2-1.webp", "images/dog_2-2.webp", "images/dog_2-3.webp", "images/dog_2-4.webp", "images/dog_2-5.webp"]
+        },
+        {
+            "id": "dog_3",
+            "name": "Dog Harness-Neoprene Comfort Liner-Orange and Gray",
+            "category": "Dog Food",
+            "originalPrice": 18.00,
+            "offerPrice": 12.00,
+            "shortDesc": " It's made of soft and durable polyester webbing, built for everyday use. It's designed super lightweight so that your furry friend can always be on the move! Adjustable straps at the neck and girth will make it the perfect fit for your dog.",
+            "description": "Best Friends Comfort Neoprene Pet Harness is comfortable and stylish choice for your dog. This Small Dog Harness has a Orange and Gray Strutt Your Mutt design that is adjustable for a comfortable yet secure fit with weather-proof nylon durable hardware and neoprene padding for comfort. This harness provides more control for the dogs that pull, making it safer during your daily walks. The Best Friends Animal Society Licensing Program aims to raise funds and awareness for its mission to SAVE THEM ALL. Unique Petz is an official Licensee and is proud to support its lifesaving work across the country. Unique Petz has created a full line of animal products to enhance the daily lives of our pets as well as raise awareness of BFAS.",
+            "keyBenefits": [
+                "Made of durable and soft polyester webbing.",
+                "Lightweight design for ease of movement.",
+                "Adjustable at the neck and girth for the perfect fit.",
+                "Features an adjustable, contrasting tape under the belly.",
+                "Sturdy D - ring at the back for secure leash attachment.",
+                "ID ring for name tag attachment."
+            ],
+            "ingredients": "",
+            "rating": 5,
+            "tags": ["top"],
+            "images": ["images/dog_3-1.webp", "images/dog_3-2.webp", "images/dog_3-3.webp", "images/dog_3-4.webp", "images/dog_3-5.webp"]
+        },
+        {
+            "id": "dog_4",
+            "name": "Pawganic Organic Chicken Brown Recipe",
+            "category": "Dog Food",
+            "originalPrice": 40.00,
+            "offerPrice": 26.00,
+            "shortDesc": "Pawganic Organic Chicken Brown Recipe is a premium dog food made with organic, human-grade chicken and wholesome brown rice. Packed with natural nutrients, it’s free from artificial additives, making it a healthy, balanced choice for dogs of all breeds and sizes. Ideal for supporting digestion, energy, and overall well-being.",
+            "description": "<strong>Pawganic Organic Chicken Brown Recipe – Nourishment the Natural Way</strong><br>Give your furry companion the wholesome nutrition they deserve with Pawganic Organic Chicken Brown Recipe, a thoughtfully crafted dog food made with premium organic ingredients. At the heart of this recipe is organic, human-grade chicken—a lean, high-quality protein source that helps build and maintain strong muscles while keeping your dog energized and satisfied.<br>Blended with organic brown rice, a gentle and easily digestible whole grain, this recipe provides lasting energy and supports digestive health. To round out the nutrition, we've included a medley of organic vegetables and superfoods, carefully chosen to support your dog’s immune system, skin and coat health, and overall well-being. Every bite is free from artificial preservatives, fillers, soy, wheat, and corn—because your dog deserves real food made with integrity.",
+            "keyBenefits": [
+                "<strong>Organic Chicken Meat:</strong> Provides high - quality, easily digestible protein essential for muscle development.",
+                "<strong>Ground Chicken Bones:</strong> A natural source of calcium and phosphorus, promoting strong bones and dental health.",
+                "<strong>Beef Organs(Heart, Liver, Kidney):</strong> Rich in vital nutrients like iron, B vitamins, and essential amino acids, supporting energy levels and organ function.",
+                "<strong>Fresh Sardines:</strong> Packed with omega - 3 fatty acids(EPA and DHA), beneficial for skin, coat, and joint health.",
+                "<strong>Whole Organic Egg:</strong> Offers a complete protein profile along with essential fats and vitamins.",
+                "<strong>Seasonal Greens & Colored Vegetables:</strong> Supplies fiber, antioxidants, and phytonutrients to aid digestion and bolster the immune system.",
+                "<strong>Seed Mix(Flax, Chia, Hemp):</strong> Delivers healthy fats, fiber, and plant - based omega - 3 s, supporting cardiovascular and skin health."
+            ],
+            "ingredients": "Organic Chicken Meat, Ground Chicken Bones",
+            "rating": 5,
+            "tags": ["top", "trending"],
+            "images": ["images/dog_4-1.webp", "images/dog_4-2.webp", "images/dog_4-3.webp", "images/dog_4-4.webp"]
+        },
+
+        {
+            "id": "cat_1",
+            "name": "The Kitten House with Mat Sleeping Bed House",
+            "category": "Cat Food",
+            "originalPrice": 28.00,
+            "offerPrice": 19.00,
+            "shortDesc": " Classic tent-shaped cat house, very cute and timeless. Leaf shaped handle on top makes it easy to move when needed, and contains a pad for easy care. The cat sleeping bed is very soft and breathable, aesthetic and functional design. Suitable for cats, puppy, small dogs, such as, chihuahuan and other pets like rabbits or ferrets.",
+            "description": "Enclosed sofa bed can be used as a cozy cave to hideaway, enhances privacy. Cat bed gives your furry friends privacy all the time. Although the canopy is cozy, fluffy and fuzzy, the structure ensures durability and stability while your pet is inside. No collapsing walls or odd tilts to the dome, just an easily removable, super comfy cushion. Non-slip bottom keeps the cat bed in place for worry-free placement on tile and hardwood floors in the house. Can be placed in a balcony corridor or other places without worrying about sliding, providing a warm and dry shelter for pets. Mainly made in outer crystal velvet, filling with high elastic sponge and does not collapse on itself, very soft and warm to keep your pet away from the cold. They feel cozy and sheltered, improving their overall comfort.",
+            "keyBenefits": [
+                "<strong>Cozy & Enclosed:</strong> Provides a private, warm space for your pet to relax and sleep.",
+                "<strong>Durable Design:</strong> Sturdy structure prevents collapsing walls, ensuring stability.",
+                "<strong>Non-Slip Bottom:</strong> Keeps the bed securely in place on various floor types.",
+                "<strong>Easy Care:</strong> Removable cushion for easy cleaning and maintenance.",
+                "<strong>Versatile Use:</strong> Suitable for cats, small dogs, rabbits, and other small pets."
+            ],
+            "ingredients": "",
+            "rating": 4.5,
+            "tags": ["featured", "top"],
+            "images": ["images/cat_1-1.webp", "images/cat_1-2.webp", "images/cat_1-3.webp", "images/cat_1-4.webp"]
+        },
+        {
+            "id": "cat_2",
+            "name": "Meow Mix Original Choice Dry Cat Food, 30 lb. Bag",
+            "category": "Cat Food",
+            "originalPrice": 50.00,
+            "offerPrice": 28.00,
+            "shortDesc": "Contains one (1) 30-pound bag of Meow Mix Original Choice Dry Cat Food, now with a new look. One hundred percent complete and balanced nutrition for adult cats. High quality protein helps support strong, healthy muscles.",
+            "description": "Delight your cat with the Original Choice for everyday nutrition — and taste that hits. Meow Mix Original Choice Dry Cat Food is made with the irresistible flavors of chicken, turkey, salmon and ocean fish to get ’em purring for mealtime. And you can feel the excitement too, knowing that this formula provides the one-hundred percent complete and balanced nutrition your cat needs every day. That includes 40 essential vitamins, minerals, amino acids and fatty acids, along with high quality protein that helps support a lean energetic body. And don’t forget the antioxidants, which help support a long, healthy life. With so much goodness packed into every bite, it’s no wonder why Meow Mix cat food is The Only One Cats Ask for by Name.",
+            "keyBenefits": [
+                "Contains one (1) 30-pound bag of Meow Mix Original Choice Dry Cat Food, now with a new look",
+                "More of the flavor cats love (versus previous Meow Mix Original Choice formula)",
+                "One hundred percent complete and balanced nutrition for adult cats",
+                "High quality protein helps support strong, healthy muscles",
+                "Produced from globally sourced ingredients"
+            ],
+            "ingredients": "Ground Corn, Chicken By-Product Meal, Soybean Meal, Corn Protein Meal, Beef Tallow (Mixed Tocopherols Used As A Preservative), Natural Flavor, Calcium Carbonate, Turkey By-Product Meal, Salmon Meal, Ocean Fish Meal (Ethoxyquin Used As A Preservative), Phosphoric Acid, Choline Chloride, Salt, Vitamins (Vitamin E Supplement, Niacin Supplement, Vitamin A Supplement, Thiamine Mononitrate, Pyridoxine Hydrochloride, D-Calcium Pantothenate, Riboflavin Supplement, Vitamin B12 Supplement, Folic Acid, Biotin, Vitamin D3 Supplement), Dl-Methionine, Taurine, Minerals (Ferrous Sulfate, Zinc Oxide, Manganous Oxide, Copper Sulfate, Sodium Selenite, Calcium Iodate), Yellow 6, Yellow 5, Red 40, Lactic Acid, Potassium Chloride, L-Lysine Monohydrochloride, Blue 2, Rosemary Extract.",
+            "rating": 5,
+            "tags": ["top", "trending"],
+            "images": ["images/cat_2-1.webp", "images/cat_2-2.webp", "images/cat_2-3.webp", "images/cat_2-4.webp", "images/cat_2-5.webp"]
+        },
+        {
+            "id": "cat_3",
+            "name": "Pawganic Chicken & Turkey Flavor Adult Cat Food 35 Lb",
+            "category": "Cat Food",
+            "originalPrice": 48.00,
+            "offerPrice": 23.00,
+            "shortDesc": "Pawganic understands the unique bond between you and your cat. Every moment together creates memories that will fill your heart for a lifetime. That's why each one of our products is crafted with the care that cats love, and the attention to detail that cat lovers trust. For all the soft purrs, warm snuggles, and playful pounces – give your Pawganic the very best.",
+            "description": "Your cat is special to you, so their food should be too. That's why we created Pawganic Complete Nutrition Chicken & Turkey Flavor Dry Cat Food. This food provides 100% complete and balanced nutrition for your cat's optimal health. This cat food contains 25 essential vitamins and minerals and protein that helps support strong muscles. Pawganic Complete Nutrition Dry Cat Food also provides essential fatty acids. Follow the feeding instructions to serve up the proper amount of food to your cat and let them feast on the delicious chicken and turkey flavor. For a great way to start your cat's day, open a bag of Pawganic Complete Nutrition Chicken & Turkey Flavor Dry Cat.",
+            "keyBenefits": [
+                "No artificial colors or flavors",
+                "Taurine to support healthy heart function",
+                "Contains vegetables",
+                "Complete and Balanced for Adult Cats",
+                "Crunchy texture helps clean teeth while chewing"
+            ],
+            "ingredients": "chicken by-product meal, ground whole grain corn, ground wheat, soybean meal, meat and bone meal, animal fat (preserved with BHA and citric acid), natural flavor (source of liver, seafood and turkey flavors), brewers dried yeast, salt, potassium chloride, fish oil (stabilized with mixed tocopherols), choline chloride, taurine, DL-methionine, vitamin E supplement, ferrous sulfate, zinc sulfate, zinc oxide, copper sulfate, niacin supplement, yellow #5, vitamin A supplement, d-calcium pantothenate, manganous oxide, blue #2, thiamine mononitrate, riboflavin supplement, pyridoxine hydrochloride, biotin, vitamin B12 supplement, menadione sodium bisulfite complex (source of vitamin K activity), sodium selenite, folic acid, calcium iodate, vitamin D3 supplement, cobalt carbonate",
+            "rating": 4.5,
+            "tags": ["trending"],
+            "images": ["images/cat_3-1.webp", "images/cat_3-2.webp", "images/cat_3-3.webp", "images/cat_3-4.webp", "images/cat_3-5.webp"]
+        },
+        {
+            "id": "cat_4",
+            "name": "Pawganic Fancy Feast Grilled Wet Cat Food, Seafood Feast in Gravy, 3 oz Can",
+            "category": "Cat Food",
+            "originalPrice": 15.00,
+            "offerPrice": 5.00,
+            "shortDesc": "Pawganic Fancy Feast Grilled Wet Cat Food Seafood, 3 oz Cans (24 Pack). 100 percent complete and balanced nutrition. Essential vitamins and minerals to help support her health. Delicious grilled seafood flavor that cats love.",
+            "description": "Pawganic Fancy Feast Grilled Wet Cat Food Seafood, Bring an ocean of joy to your cat's mealtime when you fill her bowl with Purina Fancy Feast Grilled Seafood Feast in Gravy wet cat food. Smooth, tender cuts of grilled seafood create flavors sure to get her taste buds going, and the delicious, savory gravy covering every bite delivers the perfect amount of moisture to keep her at her dish until the very last drop. This canned gourmet cat food satisfies her innate craving for seafood flavors, and you get the satisfaction of providing her with high-quality ingredients that deliver 100 percent complete and balanced nutrition with essential vitamins and minerals.",
+            "keyBenefits": [
+                "Fancy Feast Grilled Wet Cat Food Seafood, 3 oz Cans (24 Pack)",
+                "100 percent complete and balanced nutrition",
+                "Essential vitamins and minerals to help support her health",
+                "Delicious grilled seafood flavor that cats love",
+                "Provides essential vitamins and minerals to help support overall health"
+            ],
+            "ingredients": "Fish Broth, Ocean Fish, Wheat Gluten, Meat By-Products, Liver, Chicken, Corn Starch-Modified, Soy Flour, Corn Oil, Shrimp, Glycine, Salt, Tricalcium Phosphate, Natural Flavor, Minerals [Potassium Chloride, Magnesium Proteinate, Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Potassium Iodide], Choline Chloride, Taurine, Vitamins [Thiamine Mononitrate (Vitamin B-1), Vitamin E Supplement, Niacin (Vitamin B-3)",
+            "rating": 5,
+            "tags": ["featured", "new"],
+            "images": ["images/cat_4-1.webp", "images/cat_4-2.webp", "images/cat_4-3.webp", "images/cat_4-4.webp"]
+        },
+
+        {
+            "id": "bird_1",
+            "name": "Cage Happy Beaks Ball Thing Bird Toy",
+            "category": "Bird Food",
+            "originalPrice": 33.00,
+            "offerPrice": 25.00,
+            "shortDesc": "Cotton toy for your bird. With many various 100% cotton rope, with woods ring. Nontoxic dye. Hang from 14″ cotton rope with quick link. Use this toy as a foot toy for your Mediums & Larges Parrots.",
+            "description": "Add excitement to your bird’s cage with the Cage Happy Beaks Ball Thing Bird Toy! This engaging toy features soft, twisted cotton rope and brightly colored wooden rings, perfect for chewing, tugging, and climbing. Its stimulating design encourages natural behaviors, helping to prevent boredom and support mental and physical well-being. Made with bird-safe materials and dyes, it’s gentle on beaks and feet while being tough enough for everyday play. The toy helps keep your bird’s beak trimmed and muscles active, reducing the risk of stress-related habits like feather plucking. Great for parrots, parakeets, cockatiels, and similar small to medium-sized birds, it installs easily with a sturdy metal clip that attaches securely to any cage. Whether your feathered friend loves to chew, swing, or climb, this toy provides safe, colorful entertainment. Keep your bird happy and healthy with this fun, essential cage accessory.",
+            "keyBenefits": [
+                "<strong>Encourages Natural Behaviors:</strong> Promotes climbing, chewing, and beak exercise.",
+                "<strong>Prevents Boredom:</strong> Provides mental stimulation to reduce stress and destructive habits.",
+                "<strong>Colorful & Attractive:</strong> Bright colors stimulate visual interest and curiosity.",
+                "<strong>Safe Materials</strong> Made with bird-safe dyes, natural cotton rope, and chewable wood.",
+                "<strong>Easy to Install</strong> Comes with a secure metal clip for quick and simple cage attachment.",
+                "<strong>Durable Design</strong> Built to withstand playful pecks and nibbles from active birds.",
+                "<strong>Great for Small to Medium Birds</strong> Suitable for parrots, parakeets, cockatiels, and more."
+            ],
+            "ingredients": "",
+            "rating": 5.0,
+            "tags": ["featured"],
+            "images": ["images/bird_1-1.webp", "images/bird_1-2.webp", "images/bird_1-3.webp", "images/bird_1-4.webp", "images/bird_1-5.webp"]
+        },
+
+        {
+            "id": "bird_2",
+            "name": "Audubon Park Waste Free Wild Bird Food, Dry, 1 Count per Pack, 15 lbs.",
+            "category": "Bird Food",
+            "originalPrice": 28.00,
+            "offerPrice": 10.00,
+            "shortDesc": "Audubon Park Waste Free Wild Bird Food offers all of the fun of backyard birding with none of the mess. ",
+            "description": "Audubon Park Waste Free Wild Bird Food offers all of the fun of backyard birding with none of the mess. Bursting with delectable delights, this shell-free bird feed blend contains high oil content sunflower hearts, peanuts, and more. Birds can enjoy a ready-to-eat feast and you can enjoy a mess-free yard. Waste Free can be used in tube, hopper, or platform bird feeders.",
+            "keyBenefits": [
+                "Premium, shell-free ingredients for a mess-free backyard",
+                "For use in tube, hopper, or platform bird feeders",
+                "Keep your feeder flowing freely with this shell-free blend",
+                "Contains sunflower hearts, peanuts, and more quality ingredients for feeding the birds",
+                "Attracts finches, cardinals, thrushes, wrens, buntings, and more"
+            ],
+            "ingredients": "Sunflower kernels, millet, peanuts, grain products, canary seed",
+            "rating": 4.5,
+            "tags": ["new"],
+            "images": ["images/bird_2-1.webp", "images/bird_2-1.webp", "images/bird_2-1.webp", "images/bird_2-1.webp", "images/bird_2-1.webp"]
+        },
+
+        {
+            "id": "bird_3",
+            "name": "Pennington Small Breed Everyday Blend Dry Bird Food, for Parakeets, Canaries and Finches; 3 lb. Bag",
+            "category": "Bird Food",
+            "originalPrice": 46.00,
+            "offerPrice": 25.00,
+            "shortDesc": "Specially formulated to meet the nutritional needs of small birds like Parakeets, Canaries and Finches. With Vitamin A and Omega-6 fatty acids.",
+            "description": "Pennington Small Bird Blend Bird Seed is specially formulated with ingredients specially selected for small birds like Parakeets, Canaries & Finches, and other birds with small beaks. Small birds need a diet like the Pennington Small Bird Blend that is lower in fat to prevent obesity and rich in nutrients to keep them healthy and thriving. Additionally, this dry bird food includes a variety of seeds and grains that cater to the unique feeding styles and nutritional needs of small birds, ensuring they receive a balanced and enjoyable diet. 3 lb bag.",
+            "keyBenefits": [
+                "Pennington Small Breed Everyday Blend Dry Bird Food",
+                "Specially formulated to meet the nutritional needs of small birds like Parakeets, Canaries and Finches With Vitamin A and Omega-6 fatty acids",
+                "Formulated with probiotics",
+                "Animal Life stage: All Life stages",
+                "Convenient easy to store 3 lb. bag"
+            ],
+            "ingredients": "Millet, Wheat, Milo, Canary Grass Seed, Oat Groats, Corn, Peanuts, Sunflower Seed, Corn, Corn Gluten Meal, Soybean Meal, Brewers Dried Yeast, Dried Molasses, Dried Egg Product, Soybean Oil, Fish Oil, Corn Oil, Flaxseed Meal, Soybean Meal, Dried Cane Molasses, Brewers Dried Yeast, Dried Egg Product, Ground Flaxseed, Salt, L-Lysine Monohydrochloride, DL-Methionine, Vitamin E Supplement, Vitamin A Supplement, Vitamin D-3 Supplement, Sodium Chloride (Salt), Choline Chloride, Ascorbic Acid, Magnesium Oxide, Niacin, D-Calcium Pantothenate, Sodium Selenite, , Riboflavin, Pyridoxine Hydrochloride",
+            "rating": 5,
+            "tags": ["trending"],
+            "images": ["images/bird_3-1.webp", "images/bird_3-2.webp", "images/bird_3-3.webp", "images/bird_3-4.webp", "images/bird_3-5.webp"]
+        },
+
+        {
+            "id": "bird_4",
+            "name": "Old Potters Wildlife Sunflower Hearts & Chips, Attracts Birds & Wildlife, Organic Raw NON GMO, USA Grown, Small Farm",
+            "category": "Bird Food",
+            "originalPrice": 120.00,
+            "offerPrice": 80.00,
+            "shortDesc": "Pure and Clean: Enjoy a blend of 100% natural sunflower hearts and chips, free from shells, ensuring a no-mess feeding experience in your garden or bird feeder.",
+            "description": "Our Wildlife Sunflower Hearts & Chips are crafted to attract a wide variety of birds and wildlife to your backyard, making them ideal for nature enthusiasts and birdwatchers. These sunflower seeds are 100% organic, raw, and NON-GMO, ensuring they’re as natural and nutritious as possible for your feathered visitors. Sourced from small farms across the USA, each batch supports local growers committed to sustainable farming practices, ensuring quality and care from seed to feed.",
+            "keyBenefits": [
+                "Pure and Clean: Enjoy a blend of 100% natural sunflower hearts and chips, free from shells, ensuring a no-mess feeding experience in your garden or bird feeder.",
+                "Attract Diverse Wildlife: Ideal for attracting a variety of birds including finches, cardinals, bluebirds, and more, enhancing your bird-watching experience.",
+                "Nutrient-Rich Feed: Packed with high-energy fats and oils, our sunflower hearts and chips provide essential nutrients to help keep your local birds healthy and thriving.",
+                "All-Weather Feed: Perfect for year-round feeding, our sunflower mix remains fresh and palatable in all weather conditions, from hot summers to cold winters."
+            ],
+            "ingredients": "Sunflower Hearts and Chips",
+            "rating": 4.5,
+            "tags": ["top"],
+            "images": ["images/bird_4-1.webp", "images/bird_4-2.webp", "images/bird_4-3.webp", "images/bird_4-4.webp", "images/bird_4-5.webp"]
+        },
+
+        {
+            "id": "others_1",
+            "name": "Kaytee Koi's Choice Koi Floating Fish Food 10 LB Bag",
+            "category": "Others",
+            "originalPrice": 33.00,
+            "offerPrice": 25.00,
+            "shortDesc": "Koi's Choice Premium Pond formula is a highly digestible, floating pellet food that is suitable for all seasons. It provides necessary animal and vegetable proteins, and essential nutrients required for excellent growth, color, health and longevity.",
+            "description": "Koi's Choice Premium Pond formula is a highly digestible, floating pellet food that is suitable for all seasons. It provides necessary animal and vegetable proteins, and essential nutrients required for excellent growth, color, health and longevity. Kaytee Koi's Choice formula is nutritionally complete, helps turn your backyard pond or aquarium into a haven for all of your pond fish. Kaytee's Koi's Choice is for Koi, Goldfish and other pond fish. Feeding frequency varies with water temperature and the amount of growth desired. Never provide more food per feeding than will be fully consumed within 5 to 10 minutes. Remove uneaten food. In warm water (above 60°F), feed one to five times daily, increasing the number of feedings as temperature rises or to achieve desired results. In cool water (50 to 60°F), feed one or two times daily. In cold water (below 50°F), feed every other day. Do not feed below 40°F.",
+            "keyBenefits": [
+                "Floating food",
+                "Provides necessary animal and vegetable proteins",
+                "Great for koi, goldfish and other pond fish",
+                "Suitable for all seasons",
+                "For maximum freshness store in a cool, dry place",
+                "Suitable for all seasons",
+                "Highly digestible for less waste and pond clarity"
+            ],
+            "ingredients": "Fish Meal, Ground Corn, Dehulled Soybean Meal, Wheat Flour, Corn Gluten Meal, Fish Oil, Wheat Germ Meal, Dehydrated Alfalfa Meal, Potassium Sulfate, DL-Methionine, L-Lysine, Propionic Acid (a preservative), L-ascorbyl-2-polyphosphate (source of vitamin C), Vitamin A Supplement, Choline Chloride, Vitamin E Supplement, Vitamin B12 Supplement, Riboflavin Supplement, Zinc Oxide, Ferrous Carbonate, Manganous Oxide, Menadione Dimethylpyrimidinol Bisulfite (source of vitamin K activity), Niacin, Ethoxyquin (a preservative), Calcium Pantothenate, Copper Sulfate, Thiamine Mononitrate, Pyridoxine Hydrochloride, Cholecalciferol (source of vitamin D3), Cobalt Carbonate, Folic Acid, Calcium Iodate, Biotin, Sodium Selenite.",
+            "rating": 5.0,
+            "tags": ["featured"],
+            "images": ["images/others_1-1.webp", "images/others_1-2.webp", "images/others_1-3.webp", "images/others_1-4.webp", "images/others_1-5.webp"]
+        },
+
+        {
+            "id": "others_2",
+            "name": "Qweryboo 2 Pcs Hamster Rabbit Chew Toys for Teeth, Natural Organic Wood Apple Sticks and Timothy Hay Treats for Bunny, Chinchillas, Guinea Pigs",
+            "category": "Others",
+            "originalPrice": 28.00,
+            "offerPrice": 10.00,
+            "shortDesc": "Pet bunny chew toys made from natural apple sticks, high-quality forage grass and natural roses. Organic apple sticks are naturally dried, pesticide-free, safe, non-toxic, environmentally friendly and edible.",
+            "description": "Rabbit chew toys for teeth, good for teeth grinding and to prevent teeth from growing too fast and too long. These bunny rabbit toys can also distract your pet from biting the cage, sleeping bed or other furniture. Pet snack chew toys are rich in high fiber, which can promote intestinal motility of small animals, digest the food they accumulate in the stomach and increase appetite. The tooth molar toy has a cute appearance and adopts a spherical design. A variety of flavors can attract pets' attention for a long time, so that you can work without worries. You can also work at home and keep quiet without distraction. Pet rabbit chew toy will provide hours of fun for your animal plus keep their gnawing habit happy. Fit for guinea pigs, chinchilla, squirrel, rabbits, parrot, hamster, gerbil and other rodent species.",
+            "keyBenefits": [
+                "Dried by professional drying techniques.",
+                "Pesticide-free, safe, non-toxic.",
+                "Meet pets' daily needs for molar teeth.",
+                "Rich in high fiber and promote digestion.",
+                "Protect the healthy growth of the teeth of rodents."
+            ],
+            "ingredients": "",
+            "rating": 4.5,
+            "tags": ["new"],
+            "images": ["images/others_2-1.webp", "images/others_2-2.webp", "images/others_2-3.webp", "images/others_2-4.webp", "images/others_2-5.webp"]
+        },
+
+        {
+            "id": "others_3",
+            "name": "GREMBEB Rabbit Toys,400g 14.1oz Bunny Chew Sweet Bamboo Sticks Hamster Molar Treat Guinea Pig Food Snack Stuff for Clean Teeth Pet Squirrel Chinchilla Hedgehog Gerbil",
+            "category": "Others",
+            "originalPrice": 46.00,
+            "offerPrice": 25.00,
+            "shortDesc": "Sweet bamboo for chinchilla with sweet taste, rich in fruit acid, organic, no pesticides, non toxic.This Sweet bamboo for squirrel are promote intestinal digestion and stomach health.",
+            "description": "1.Package Included: 400G = 14.1 OZ Sweet Bamboo for rabbit 2.Suitable Target: This rabbit hay treat stick is not only a pet treat snack but also a clean teeth toy. It suitable for all little animals,such as guinea pig, bunny, chinchilla, parrot, gerbil, squirrel, rabbit, hamster, chipmunk, hedgehog and so on. 3.Why Do Pet Need Molar Snack Treat Food Stuff Sticks? Due to the teeth of rabbits,hamsters,and other little animal is growing every day quickly, the daily carrot or vegetable and other food is so soft that it can’t meet the needs of grinding teeth.the hard and organic molar rabbit chew toys will help them to grind theirs teeth so that prevent serious infection problem. 4.Warm tips:Please keep it ventilated and do not put it in a damp place.",
+            "keyBenefits": [
+                "Hamster chew stick guinea pig molar toys are select carefully and made of natural organic sweet bamboo,enrichment in nutrients, which this sweet bamboo stick for bunny can ensure the healthy growth of small animals.This sweet bamboo toy not just a molar clean teeth, also can be used as a chipmunk toy.Your lovely pet will not feel alone anymore.",
+                "Molar rods are good for teeth. Small animals must grind their teeth. If they do not grind their teeth, when the teeth grow, they will wear the upper and lower jaws and even become inflamed. Production process: Sifting, Pruning, Soak, Rinse, Drying, Sortation, Packaging.We use strict process to ensure wood tree branches quality."
+            ],
+            "ingredients": "",
+            "rating": 5,
+            "tags": ["trending"],
+            "images": ["images/others_3-1.webp", "images/others_3-2.webp", "images/others_3-3.webp", "images/others_3-4.webp", "images/others_3-5.webp"]
+        },
+
+        {
+            "id": "others_4",
+            "name": "PrimePets Small Animals Playpen, Waterproof Foldable Pet Cage Tent for Hamster, Rabbits, Guinea Pigs",
+            "category": "Others",
+            "originalPrice": 20.00,
+            "offerPrice": 12.00,
+            "shortDesc": "Primepets Pet playpen is made of durable 190T Polyester fabric with a high-strength internal steel liner.",
+            "description": "Primepets Pet playpen is made of durable 190T Polyester fabric with a high-strength internal steel liner. Waterproof bottom will effectively prevent urine and liquids from soaking into the floor. Urrounded by breathable mesh nets, allowing you to watch your pets and ensuring proper ventilation and minimizing odors. Our small animal cage tent is perfect for hamsters, chinchillas, guinea-pigs, mice, gerbils, ferrets, squirrels, bunny, small reptiles, kitten, puppy or other small animals.",
+            "keyBenefits": [
+                "Materials: Steel, Polyester fabric, Mesh",
+                "Expanded size: 47.2×15×23.6 in(120*38*60cm)",
+                "Folded size: 8.6×8.6 in / 22×22cm",
+                "Waterproof bottom, our camping tent will effectively prevent urine and liquids from soaking into the floor.",
+                "Breathable Mesh all arond, observe your small pets' movement.",
+                "Easy to Clean and Set up",
+                "Warm Tips for Opening",
+                "Automatic Opening - When it is opened under spring pressure, it should be away from children and face",
+                "Easily folds back flat when you’re done, for easy storage",
+                "Lightweight & Portable"
+            ],
+            "ingredients": "",
+            "rating": 4.5,
+            "tags": ["top"],
+            "images": ["images/others_4-1.webp", "images/others_4-2.webp", "images/others_4-3.webp", "images/others_4-4.webp", "images/others_4-5.webp"]
+        }
+    ]
+}

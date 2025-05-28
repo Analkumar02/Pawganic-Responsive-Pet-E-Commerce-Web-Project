@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawganic</title>
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/baloo-bhaina-2" rel="stylesheet">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+
+    <!-- Topbar -->
+    <div class="topbar d-md-block d-none">
+        <div class="container-xl">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="topbar-left d-flex align-items-center">
+                        <div class="email d-flex align-items-center">
+                            <img src="images/mail.svg" alt="mail">
+                            <a href="mailto:" support@pawganic.com ">support@pawganic.com</a>
+                            </div>
+                             <div class=" call d-flex align-items-center ">
+                                    <img src=" images/call.svg " alt=" mail ">
+                                    <a href=" mailto: " +18002900">Need help? Call Us: + 1800 2900</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <ul class="social-icons d-flex align-items-center justify-content-end">
+                        <li>
+                            <a href="javascript:void(0)"><img src="images/facebook.svg" alt="facebook"></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)"><img src="images/x.svg" alt="x"></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)"><img src="images/youtube.svg" alt="you tube"></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)"><img src="images/tiktok.svg" alt="tiktok"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header -->
+    <header class="header sticky-top" id="header">
+        <div class="container-xl">
+            <div class="bottom-bar position-relative align-items-center justify-content-between d-flex w-100">
+                <a href="index.html" class="logo"><img src="images/logo.svg" alt="pawganic logo"></a>
+
+                <ul class="nav-menu align-items-center">
+                    <li>
+                        <a href="index.html" class="active">Home</a>
+                    </li>
+                    <li>
+                        <a href="shop.html">Shop</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">About Us</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">Reviews</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">Contact Us</a>
+                    </li>
+                </ul>
+
+                <ul class="btm-bar-right d-flex align-items-center justify-content-end">
+                    <li>
+                        <a href="# " id="search-btn"><img src="images/search.svg " alt="search "></a>
+                    </li>
+                    <li>
+                        <a href="wishlist.html" class="position-relative">
+                            <img src="images/wishlist.svg" alt="wishlist">
+                            <span class="wishlist-count">0</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cart.html" class="position-relative">
+                            <img src="images/cart.svg " alt="cart ">
+                            <span class="cart-count">0</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/user.svg " alt="user "></a>
+                    </li>
+                    <li class="d-lg-none d-block">
+                        <a href="#" class="mobile-menu-icon" id="menu-btn">
+                            <img src="images/menu.svg " alt="menu ">
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Search Box -->
+                <form action="" class="search-form align-items-center">
+                    <input type="search" id="search-box" autocomplete="off" placeholder="Search here...">
+                    <label for="search-box" class="bx bx-search"></label>
+                </form>
+                <div id="suggestions" class="suggestions-box"></div>
+
+
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        <!-- Hero Area -->
+        <section class="hero-section">
+            <div class="container-xl">
+                <div class="row">
+                    <div class="col-lg-8 col-md-12 col-sm-12">
+                        <div class="swiper hero-slider shine">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide hero-slide">
+                                    <div class="slider-bg" data-background="images/banner1.jpg"></div>
+                                    <div class="hero-content">
+                                        <h1>Healthy Pet Food <br>& Accessories</h1>
+                                        <p>Delicious Food Make With Love</p>
+                                        <a href="shop.html" class="btn">Shop Now</a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide hero-slide">
+                                    <div class="slider-bg" data-background="images/banner2.jpg"></div>
+                                    <div class="hero-content">
+                                        <h1>Healthy Pets, <br>Happy Homes</h1>
+                                        <p>Wellness brings joy to the whole family.</p>
+                                        <a href="shop.html" class="btn">Shop Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="autoplay-progress">
+                                <svg viewBox="0 0 48 48">
+                                    <circle cx="24" cy="24" r="20"></circle>
+                                </svg>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="hero-right">
+                            <a href="shop.html" class="hero-right-1 text-center shine">
+                                <h5>The Best Quality House</h5>
+                                <h3><span class="position-relative">15% </span>Off For Your Pet</h3>
+                            </a>
+                            <div class="hero-right-2 shine">
+                                <h3>For Your Pet<br> Basket</h3>
+                                <a href="shop.html" class="btn">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="feature-area">
+            <div class="container-xl">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="ft-item">
+                            <div class="ft-icon"><img src="images/shipping.svg" alt="shipping"></div>
+                            <div class="ft-text">
+                                <h4>Free Shipping</h4>
+                                <p>On all orders over $50</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="ft-item">
+                            <div class="ft-icon"><img src="images/money.svg" alt="money"></div>
+                            <div class="ft-text">
+                                <h4>Money Guarantee</h4>
+                                <p>30 days for an exchange</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="ft-item">
+                            <div class="ft-icon"><img src="images/return.svg" alt="return"></div>
+                            <div class="ft-text">
+                                <h4>100% Return Policy</h4>
+                                <p>Any Time Return Product</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="ft-item">
+                            <div class="ft-icon"><img src="images/deal.svg" alt="deal"></div>
+                            <div class="ft-text">
+                                <h4>Best Deal Offer</h4>
+                                <p>Grab Your Gear and Go</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container-xl">
+            <div class="divider"></div>
+        </div>
+
+        <!-- About Us Area -->
+        <section class="about-area">
+            <div class="container-xl position-relative">
+                <div class="row align-items-center ">
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <div class="about-img">
+                            <img src="images/about-img.png" alt="about img">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <div class="about-content">
+                            <h5>WE LOVE OUR JOB!</h5>
+                            <h2>We'll Make Your Pets Really Happy</h2>
+                            <p>Our recipes are crafted using organic, non-GMO ingredients—real meats, wholesome grains,
+                                and farm-fresh vegetables—free from artificial flavors, fillers, and preservatives.
+                                Every bite is designed to support your pet’s overall
+                                health, from strong immunity to shiny coats and happy tummies.</p>
+
+                            <a href="javascript:void(0)" class="btn">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-shape1">
+                    <img src="images/abt-shape-1.png" alt="shape">
+                </div>
+                <div class="about-shape2">
+                    <img src="images/abt-shape-2.png" alt="shape">
+                </div>
+                <div class="about-shape3">
+                    <img src="images/abt-shape-3.png" alt="shape">
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Featured Product Carousel -->
+        <section class="feature-product-area">
+            <div class="container-xl">
+                <h2 class="heading">Featured Products</h2>
+                <div class="swiper feature-pr-slider">
+                    <div class="swiper-wrapper" id="featured-products-wrapper"></div>
+                    <div class="swiper-button-next pr-slider-btn pr-slider-next"></div>
+                    <div class="swiper-button-prev pr-slider-btn pr-slider-prev"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Banner Area -->
+        <div class="banner-area">
+            <div class="container-xl">
+                <div class="banner-box">
+                    <div class="img-box img-box-1 position-relative">
+                        <img src="images/banner-img1.png" alt="">
+                    </div>
+                    <div class="banner-content text-center">
+                        <h5>Your Pet Will Love</h5>
+                        <h2>Safe, Fun, and<br>Reliable Essentials</h2>
+                        <a href="shop.html" class="btn">Shop Now</a>
+                    </div>
+                    <div class="img-box img-box-2 position-relative pt-lg-4 pt-md-0">
+                        <img src="images/banner-img2.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trending Products Area -->
+        <section class="trending-area">
+            <div class="container-xl position-relative">
+                <h2 class="heading">Trending Products</h2>
+
+                <img class="cat-shape d-none d-lg-block" src="images/cat1.png" alt="cat">
+                <div class="row">
+                    <div class="col-lg-7 col-md-12 col-sm-12">
+                        <div class="row" id="trending-products-wrapper">
+
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-12 col-sm-12">
+                        <div class="trending-banner shine position-relative">
+                            <p>100% GMO free.</p>
+                            <h3>Food provides complete nutrition</h3>
+                            <a href="shop.html?filter=trending" class="btn">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Small Banner Area -->
+        <section class="small-banner-area">
+            <div class="container-xl">
+                <div class="row">
+                    <div class="col-lg-6 col-md-9 col-sm-12">
+                        <div class="small-banner-1 shine">
+                            <h3>Affordable Pet joy Awaits</h3>
+                            <a href="" class="btn">Shop Now</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 offset-md-3 offset-lg-0 col-md-9 col-sm-12">
+                        <div class="small-banner-2 shine">
+                            <h3>Focus On The Right Nutrition</h3>
+                            <a href="" class="btn">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Rated Products Area -->
+        <section class="toprated-area">
+            <div class="container-xl position-relative">
+                <h2 class="heading">Top Rated Products</h2>
+
+                <img class="dog-shape d-none d-lg-block" src="images/dog-head.png" alt="cat">
+                <div class="row">
+                    <div class="col-lg-5 col-md-12 col-sm-12 order-2 order-lg-1">
+                        <div class="toprated-banner shine position-relative">
+                            <p>100% GMO free.</p>
+                            <h3>Food provides complete nutrition</h3>
+                            <a href="shop.html?filter=top" class="btn">Shop Now</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-12 col-sm-12 order-1 order-lg-2">
+                        <div class="row" id="toprated-products-wrapper">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonial Area -->
+        <section class="testimonial-area">
+            <div class="container-xl">
+                <div class="row align-items-center position-relative">
+                    <div class="col-lg-6 col-md-12 col-sm-12 position-relative">
+                        <div class="swiper testimonial-slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide testimonial-slide text-center">
+                                    <img src="images/Quot.svg" alt="Quot">
+                                    <div class="rw-text">
+                                        <h4 class="rw-title">Pet Health Important</h4>
+                                        <p class="reviews">All Perfect !! I have three sites with magneto , this theme
+                                            is the best !! Excellent support , advice theme installation package , sorry
+                                            for English, are Italian but I had no problem !! Thank you !</p>
+                                    </div>
+                                    <div class="reviewer d-flex align-items-center justify-content-center">
+                                        <img src="images/user1.png" alt="reviewer">
+                                        <h5 class="mb-0">Laura Smith</h5>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide testimonial-slide text-center">
+                                    <img src="images/Quot.svg" alt="Quot">
+                                    <div class="rw-text">
+                                        <h4 class="rw-title">From Picky Eater to Enthusiastic Diner</h4>
+                                        <p class="reviews">I was hesitant at first, but I love that I can see the real
+                                            ingredients. My pup Cassie used to barely touch her food, and now she sits
+                                            by the fridge waiting for it! You can tell it’s made fresh, and I feel good
+                                            knowing it’s all organic</p>
+                                    </div>
+                                    <div class="reviewer d-flex align-items-center justify-content-center">
+                                        <img src="images/user2.png" alt="reviewer">
+                                        <h5 class="mb-0">Dana West</h5>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide testimonial-slide text-center">
+                                    <img src="images/Quot.svg" alt="Quot">
+                                    <div class="rw-text">
+                                        <h4 class="rw-title">Perfect for French Bulldogs</h4>
+                                        <p class="reviews">My Frenchie has had nonstop issues with commercial food.
+                                            Constant itching and gas. Within two weeks of switching to Pawganic, the
+                                            scratching stopped and his coat is shinier than ever. We’re sticking with
+                                            the beef
+                                            recipe for good!</p>
+                                    </div>
+                                    <div class="reviewer d-flex align-items-center justify-content-center">
+                                        <img src="images/user3.png" alt="reviewer">
+                                        <h5 class="mb-0">Louis Lehman</h5>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide testimonial-slide text-center">
+                                    <img src="images/Quot.svg" alt="Quot">
+                                    <div class="rw-text">
+                                        <h4 class="rw-title">Feeding Pets Like Family</h4>
+                                        <p class="reviews">The variety of choices my 4-legged kids have is amazing & not
+                                            to mention full of nutrients needed.</p>
+                                    </div>
+                                    <div class="reviewer d-flex align-items-center justify-content-center">
+                                        <img src="images/user4.png" alt="reviewer">
+                                        <h5 class="mb-0">Sandra W.</h5>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide testimonial-slide text-center">
+                                    <img src="images/Quot.svg" alt="Quot">
+                                    <div class="rw-text">
+                                        <h4 class="rw-title">Exceptional Customer Service</h4>
+                                        <p class="reviews">My fridge broke and 4 containers of food went bad. They sent
+                                            out 4 new bags and I received them within 2 days!</p>
+                                    </div>
+                                    <div class="reviewer d-flex align-items-center justify-content-center">
+                                        <img src="images/user6.png" alt="reviewer">
+                                        <h5 class="mb-0">Cindy</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <div class="testimonial-img-box position-relative">
+                            <img src="images/testimonial-img.png" alt="testimonial">
+                            <div class="rw-box">
+                                <img src="images/rw-shape.svg" alt="shape">
+                                <div class="rw-content">
+                                    <img src="images/3stars.svg" alt="stars">
+                                    <h3>1800+</h3>
+                                    <p>Reviews</p>
+                                </div>
+                            </div>
+                            <img class="dog-shape" src="images/dog1.png" alt="dog">
+                        </div>
+                    </div>
+                    <img class="big-paw" src="images/big-paw.png" alt="paw">
+                    <img class="bone-shape" src="images/bone-shape.png" alt="bone">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Area -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container-xl">
+                <div class="row">
+                    <div class="col-lg-3 col-md-12 col-sm-12">
+                        <div class="footer-logo">
+                            <img src="images/pawganic-white.png" alt="pawganic logo">
+                            <p>Every bite is designed to support your pet’s overall health, from strong immunity to
+                                shiny coats and happy tummies.</p>
+                        </div>
+                        <p class="follow-text">Follow Us On:</p>
+                        <div class="footer-social">
+                            <a href="javascript:void(0)"><img src="images/facebook.svg" alt="facebook"></a>
+                            <a href="javascript:void(0)"><img src="images/x.svg" alt="x"></a>
+                            <a href="javascript:void(0)"><img src="images/youtube.svg" alt="you tube"></a>
+                            <a href="javascript:void(0)"><img src="images/tiktok.svg" alt="tiktok"></a>
+                        </div>
+                    </div>
+                    <div class="offset-lg-1 col-lg-2 col-md-4 col-sm-6">
+                        <div class="footer-links">
+                            <h5>Quick Links</h5>
+                            <ul>
+                                <li><a href="javascript:void(0)">About Us</a></li>
+                                <li><a href="javascript:void(0)">Reviews</a></li>
+                                <li><a href="javascript:void(0)">Terms & Conditions</a></li>
+                                <li><a href="javascript:void(0)">Privacy Policy</a></li>
+                                <li><a href="javascript:void(0)">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-12">
+                        <div class="footer-links">
+                            <h5>Category</h5>
+                            <ul>
+                                <li><a href="javascript:void(0)">Dog Food</a></li>
+                                <li><a href="javascript:void(0)">Cat Food</a></li>
+                                <li><a href="javascript:void(0)">Bird Food</a></li>
+                                <li><a href="javascript:void(0)">Others</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-12">
+                        <div class="footer-links">
+                            <h5>Contact</h5>
+                            <ul>
+                                <li>555 A, East Manster Street, Ready Halley Neon, Uk 4512</li>
+                                <li><a href="tel:+001234567844">+00 123 45678 44</a></li>
+                                <li><a href="mailto:support@pawganic.com">support@pawganic.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-xl">
+            <div class="divider"></div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container-xl">
+                <div class="ft-btm-content">
+                    <div class="copyright-text">
+                        <p>Copyright © 2025. All Rights Reserved.</p>
+                    </div>
+                    <div class="payment-methods">
+                        <img src="images/payment.png" alt="payment methods">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js "></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
+</body>
+
+</html>
