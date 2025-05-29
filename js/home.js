@@ -79,9 +79,7 @@ $(document).ready(function () {
         <div class="swiper-slide product-slide">
             <div class="product-box">
                 <div class="product-img position-relative">
-                    <img class="pr-img" src="${product.images[0]}" alt="${
-        product.name
-      }">
+                    <img class="pr-img" src="${product.images[0]}" alt="${product.name}">
                     <div class="add-to-cart">
                         ${cartControl}
                     </div>
@@ -357,6 +355,8 @@ $(document).ready(function () {
     },
   });
   /*----------Testimonial Carousel----------*/
+
+  // GSAP Animations (no duplicates)
   gsap.from(".hero-section", { opacity: 0, y: 50, duration: 1 });
   gsap.from('.hero-section .hero-slide .hero-content h1', { opacity: 0, y: 40, duration: 1 });
   gsap.from('.hero-section .hero-slide .hero-content p', { opacity: 0, y: 40, duration: 1, delay: 0.3 });
@@ -402,7 +402,6 @@ $(document).ready(function () {
       start: 'top 80%',
     }
   });
-
 
   gsap.from('.banner-area .img-box-1', {
     opacity: 0,

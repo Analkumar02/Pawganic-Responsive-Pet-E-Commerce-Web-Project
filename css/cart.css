@@ -2,7 +2,7 @@
   --body-font-family: "Plus Jakarta Sans", sans-serif;
   --heading-font-family: "Baloo Bhaina 2", sans-serif;
   --body-font-size: 16px;
-  --body-line-height: 1.75;
+  --body-line-height: 1.5;
   --heading-line-height: 1.2;
   --body-color: #445374;
   --heading-color: #403148;
@@ -306,7 +306,7 @@ thead {
   line-height: 1;
 }
 .product-box .product-img .add-to-cart .btn img {
-  margin-top: -4px;
+  margin-top: -2px;
 }
 .product-box .product-img .quantity-box {
   background-color: var(--color-white-default);
@@ -353,7 +353,6 @@ thead {
   color: var(--body-color);
   font-weight: var(--fw-medium);
   display: -webkit-box;
-  -webkit-line-clamp: 2;
   line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;

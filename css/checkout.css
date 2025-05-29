@@ -2,7 +2,7 @@
   --body-font-family: "Plus Jakarta Sans", sans-serif;
   --heading-font-family: "Baloo Bhaina 2", sans-serif;
   --body-font-size: 16px;
-  --body-line-height: 1.75;
+  --body-line-height: 1.5;
   --heading-line-height: 1.2;
   --body-color: #445374;
   --heading-color: #403148;
@@ -306,7 +306,7 @@ thead {
   line-height: 1;
 }
 .product-box .product-img .add-to-cart .btn img {
-  margin-top: -4px;
+  margin-top: -2px;
 }
 .product-box .product-img .quantity-box {
   background-color: var(--color-white-default);
@@ -353,7 +353,6 @@ thead {
   color: var(--body-color);
   font-weight: var(--fw-medium);
   display: -webkit-box;
-  -webkit-line-clamp: 2;
   line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -783,7 +782,7 @@ thead {
 }
 .checkout-area #checkout-form .order-summary .ck-pr-box {
   gap: 15px;
-  max-width: 300px;
+  max-width: 340px;
 }
 .checkout-area #checkout-form .order-summary .ck-pr-box img {
   max-width: 60px;
@@ -805,6 +804,9 @@ thead {
 }
 .checkout-area #checkout-form .order-summary .form-check .form-check-input:checked[type=radio] {
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='%2300'/></svg>");
+}
+.checkout-area #checkout-form .order-summary .form-check .form-check-input:focus {
+  box-shadow: none;
 }
 .checkout-area #checkout-form .order-summary .btn-pay {
   background: var(--theme-secondary);

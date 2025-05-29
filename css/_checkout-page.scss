@@ -39,7 +39,7 @@
             padding: 40px 30px;
             .ck-pr-box {
                 gap: 15px;
-                max-width: 300px;
+                max-width: 340px;
                 img {
                     max-width: 60px;
                     background-color: var(--color-gray-3);
@@ -61,6 +61,9 @@
                     }
                     &:checked[type=radio] {
                         background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='%2300'/></svg>");
+                    }
+                    &:focus {
+                        box-shadow: none;
                     }
                 }
             }

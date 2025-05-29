@@ -17,52 +17,29 @@ $(function () {
     return `$${parseFloat(value).toFixed(2)}`;
   }
 
-  // Dynamically populate US states in the state select
-  function populateUSStates() {
-    $.ajax({
-      url: "https://countriesnow.space/api/v0.1/countries/states",
-      method: "POST",
-      contentType: "application/json",
-      data: JSON.stringify({ country: "United States" }),
-      success: function (res) {
-        if (res.data && res.data.states) {
-          // Find all state selects (adjust selector as needed)
-          $("select.form-select")
-            .filter(function () {
-              // You may want to use a more specific selector if you have multiple selects
-              return $(this).find("option:selected").text() === "State";
-            })
-            .each(function () {
-              const $select = $(this);
-              $select
-                .empty()
-                .append("<option selected disabled>State</option>");
-              res.data.states.forEach(function (state) {
-                $select.append(
-                  `<option value="${state.name}">${state.name}</option>`
-                );
-              });
-            });
-        }
-      },
-    });
-  }
+  // --- Dynamically populate US states if country is United States ---
+  const US_STATES = [
+    "Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia",
+    "Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts",
+    "Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey",
+    "New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island",
+    "South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia",
+    "Wisconsin","Wyoming"
+  ];
 
-  // Set country select to United States and disable it
-  function setCountryToUSA() {
-    $("select.form-select")
-      .filter(function () {
-        return $(this).find("option:selected").text() === "Country";
-      })
-      .each(function () {
-        const $select = $(this);
-        $select
-          .empty()
-          .append(
-            '<option selected value="United States">United States</option>'
-          );
-        $select.prop("disabled", true);
+  function populateStates($countrySelect, $stateSelect) {
+    const country = $countrySelect.val();
+    $stateSelect.empty();
+    if (country === "United States") {
+      $stateSelect.append('<option selected disabled>State</option>');
+      US_STATES.forEach(state => {
+        $stateSelect.append(`<option value="${state}">${state}</option>`);
       });
+      $stateSelect.prop("disabled", false);
+    } else {
+      $stateSelect.append('<option selected disabled>State</option>');
+      $stateSelect.prop("disabled", true);
+    }
   }
 
   // 2. Render Order Summary
@@ -169,9 +146,22 @@ $(function () {
   // 4. On page load, render order summary if coming from cart
   renderOrderSummary();
 
-  // Call on page load
-  populateUSStates();
-  setCountryToUSA();
+  // Shipping address dynamic state
+  const $shippingCountry = $('select.form-select').eq(1);
+  const $shippingState = $('select.form-select').eq(0);
+  $shippingCountry.on("change", function () {
+    populateStates($shippingCountry, $shippingState);
+  });
+  // Initial population if United States is default
+  populateStates($shippingCountry, $shippingState);
+
+  // Billing address dynamic state
+  const $billingCountry = $('#billing-address select.form-select').eq(1);
+  const $billingState = $('#billing-address select.form-select').eq(0);
+  $billingCountry.on("change", function () {
+    populateStates($billingCountry, $billingState);
+  });
+  populateStates($billingCountry, $billingState);
 
   // 5. Form validation and submit
   $("#checkout-form").on("submit", function (e) {

@@ -1,0 +1,138 @@
+.shop-area {
+    padding: 80px 0;
+    .shop-sidebar {
+        border: 1px solid var(--color-gray-5);
+        padding: 30px 20px;
+        border-radius: 10px;
+        h5 {
+            font-size: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            #clear-filters {
+                font-size: 18px;
+                font-family: var(--body-font-family);
+                color: var(--theme-primary);
+                font-weight: var(--fw-semi-bold);
+            }
+        }
+        .cg-title {
+            font-size: 18px;
+            color: var(--color-black-1);
+            font-weight: var(--fw-semi-bold);
+            margin-bottom: 20px;
+        }
+        .form-check {
+            display: flex;
+            gap: 10px;
+            color: var(--color-black-1);
+            font-weight: var(--fw-medium);
+            margin-bottom: 10px;
+            input {
+                border-radius: 50%;
+                width: 20px;
+                height: 20px;
+                border: 1px solid var(--color-black-1);
+                &:checked {
+                    background-color: var(--theme-secondary);
+                    border: 1px solid var(--theme-secondary);
+                }
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        .top-products {
+            .pr-box {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                img {
+                    max-width: 80px;
+                    width: 100%;
+                    border-radius: 15px;
+                }
+                .pr-info {
+                    color: var(--body-color);
+                    line-height: 1.2;
+                    p {
+                        font-size: 14px;
+                    }
+                    .pr-price {
+                        display: flex;
+                        gap: 10px;
+                        font-weight: var(--fw-bold);
+                        font-family: var(--heading-font-family);
+                        font-size: 18px;
+                        margin-top: 10px;
+                        .offer-price {
+                            color: var(--theme-secondary);
+                        }
+                        .org-price {
+                            color: var(--color-gray-7);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .pr-grid-head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        color: var(--body-color);
+        .filter-box {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            img {
+                transition: all 0.4s ease;
+                &:hover {
+                    scale: 0.9;
+                }
+            }
+        }
+        .form-select {
+            option {
+                &:enabled {
+                     :hover {
+                        background-color: var(--theme-primary);
+                    }
+                }
+            }
+            &:focus {
+                box-shadow: none;
+            }
+        }
+    }
+    .pr-pagination {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        li {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            a {
+                color: var(--color-black-1);
+                border-radius: 50%;
+                background-color: var(--color-gray-5);
+                padding: 2px 5px;
+                display: block;
+                font-size: 18px;
+                width: 30px;
+                text-align: center;
+                margin-right: 10px;
+            }
+        }
+        .active {
+            a {
+                background-color: var(--theme-primary);
+            }
+        }
+    }
+}

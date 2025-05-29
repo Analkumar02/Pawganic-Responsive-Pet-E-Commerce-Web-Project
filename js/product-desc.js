@@ -180,56 +180,62 @@ $(document).ready(function () {
     });
 
     // GSAP animations for product details (after DOM update)
-    gsap.from(".single-img-box", {
-      opacity: 0,
-      x: -60,
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".single-img-box",
-        start: "top 85%",
-      },
-    });
-
-    gsap.from(".single-pr-content > *:not(.rw-stars)", {
-      opacity: 0,
-      y: 30,
-      duration: 0.7,
-      stagger: 0.12,
-      scrollTrigger: {
-        trigger: ".single-pr-content",
-        start: "top 85%",
-      },
-    });
-
-    gsap.fromTo(
-      ".rw-stars li",
-      { opacity: 0, scale: 0.5 },
-      {
-        opacity: 1,
-        scale: 1,
-        duration: 0.5,
-        stagger: 0.08,
-        delay: 0.2,
+    if (document.querySelector(".single-img-box")) {
+      gsap.from(".single-img-box", {
+        opacity: 0,
+        x: -60,
+        duration: 1,
         scrollTrigger: {
-          trigger: ".rw-stars",
-          start: "top 90%",
+          trigger: ".single-img-box",
+          start: "top 85%",
         },
-        clearProps: "opacity,scale"
-      }
-    );
+      });
+    }
 
-    // Ensure parent is fully visible
-    gsap.set(".rw-stars", { opacity: 1, clearProps: "opacity" });
+    if (document.querySelector(".single-pr-content")) {
+      gsap.from(".single-pr-content > *:not(.rw-stars)", {
+        opacity: 0,
+        y: 30,
+        duration: 0.7,
+        stagger: 0.12,
+        scrollTrigger: {
+          trigger: ".single-pr-content",
+          start: "top 85%",
+        },
+      });
+    }
 
-    gsap.from(".custom-tabs", {
-      opacity: 0,
-      y: 40,
-      duration: 0.8,
-      scrollTrigger: {
-        trigger: ".custom-tabs",
-        start: "top 90%",
-      },
-    });
+    if (document.querySelector(".rw-stars li")) {
+      gsap.fromTo(
+        ".rw-stars li",
+        { opacity: 0, scale: 0.5 },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 0.5,
+          stagger: 0.08,
+          delay: 0.2,
+          scrollTrigger: {
+            trigger: ".rw-stars",
+            start: "top 90%",
+          },
+          clearProps: "opacity,scale",
+        }
+      );
+      gsap.set(".rw-stars", { opacity: 1, clearProps: "opacity" });
+    }
+
+    if (document.querySelector(".custom-tabs")) {
+      gsap.from(".custom-tabs", {
+        opacity: 0,
+        y: 40,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: ".custom-tabs",
+          start: "top 100%",
+        },
+      });
+    }
   });
 });
 
@@ -321,53 +327,61 @@ $.getJSON("data/products.json", function (data) {
   });
 
   // GSAP animation for related product boxes (after DOM update)
-  gsap.from(".related-pr-slider .product-box", {
-    opacity: 0,
-    y: 40,
-    scale: 0.96,
-    duration: 0.7,
-    stagger: 0.15,
-    scrollTrigger: {
-      trigger: ".related-pr-slider",
-      start: "top 90%",
-    },
-  });
+  if (document.querySelector(".related-pr-slider .product-box")) {
+    gsap.from(".related-pr-slider .product-box", {
+      opacity: 0,
+      y: 40,
+      scale: 0.96,
+      duration: 0.7,
+      stagger: 0.15,
+      scrollTrigger: {
+        trigger: ".related-pr-slider",
+        start: "top 100%",
+      },
+    });
+  }
 });
 
 $(document).ready(function () {
   gsap.registerPlugin(ScrollTrigger);
 
   // Breadcrumb area animation
-  gsap.from(".breadcrumb-area .breadcrumb-box", {
-    opacity: 0,
-    y: 40,
-    duration: 0.8,
-    scrollTrigger: {
-      trigger: ".breadcrumb-area",
-      start: "top 90%",
-    },
-  });
-  gsap.from(".breadcrumb-area .br-img", {
-    opacity: 0,
-    x: 40,
-    duration: 0.8,
-    delay: 0.2,
-    scrollTrigger: {
-      trigger: ".breadcrumb-area",
-      start: "top 90%",
-    },
-  });
+  if (document.querySelector(".breadcrumb-area .breadcrumb-box")) {
+    gsap.from(".breadcrumb-area .breadcrumb-box", {
+      opacity: 0,
+      y: 40,
+      duration: 0.8,
+      scrollTrigger: {
+        trigger: ".breadcrumb-area",
+        start: "top 90%",
+      },
+    });
+  }
+  if (document.querySelector(".breadcrumb-area .br-img")) {
+    gsap.from(".breadcrumb-area .br-img", {
+      opacity: 0,
+      x: 40,
+      duration: 0.8,
+      delay: 0.2,
+      scrollTrigger: {
+        trigger: ".breadcrumb-area",
+        start: "top 90%",
+      },
+    });
+  }
 
   // Footer animation
-  gsap.from(".footer", {
-    opacity: 0,
-    y: 40,
-    duration: 1,
-    scrollTrigger: {
-      trigger: ".footer",
-      start: "top 95%",
-    },
-  });
+  if (document.querySelector(".footer")) {
+    gsap.from(".footer", {
+      opacity: 0,
+      y: 40,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".footer",
+        start: "top 100%",
+      },
+    });
+  }
 
   // Accessibility: reduce motion
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
