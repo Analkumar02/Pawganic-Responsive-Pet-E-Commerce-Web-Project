@@ -18,7 +18,9 @@ $(function () {
     <p>${shipping.city}, ${shipping.state} ${shipping.pincode}, ${shipping.country}</p>
     <p>${shipping.email}</p>
   `;
-  $(".d-box-single:contains('Shipping Address')").html(`<p class="text-muted">Shipping Address</p>${shippingHtml}`);
+  $(".d-box-single:contains('Shipping Address')").html(
+    `<p class="text-muted">Shipping Address</p>${shippingHtml}`
+  );
 
   // 5. Update billing address
   const billing = order.billing;
@@ -27,13 +29,15 @@ $(function () {
     <p>${billing.address1}</p>
     <p>${billing.city}, ${billing.state} ${billing.pincode}, ${billing.country}</p>
   `;
-  $(".d-box-single:contains('Billing Address')").html(`<p class="text-muted">Billing Address</p>${billingHtml}`);
+  $(".d-box-single:contains('Billing Address')").html(
+    `<p class="text-muted">Billing Address</p>${billingHtml}`
+  );
 
   // 6. Update order summary (items, totals, etc.)
   let itemsHtml = "";
-  order.items.forEach(item => {
+  order.items.forEach((item) => {
     itemsHtml += `
-      <div class="d-flex justify-content-between align-items-center">
+      <div class="d-flex justify-content-between align-items-center mb-2">
         <span class="ck-pr-box d-flex align-items-center">
           <span><img src="${item.image}" alt=""></span>
           <span class="pr-title">${item.name} x ${item.quantity}</span>
@@ -46,7 +50,9 @@ $(function () {
     <div class="ck-divider mb-4 mt-4"></div>
     <div class="d-flex justify-content-between mb-3">
       <span>Shipping</span>
-      <span>${order.shipping === 0 ? "Free shipping" : `$${order.shipping.toFixed(2)}`}</span>
+      <span>${
+        order.shipping === 0 ? "Free shipping" : `$${order.shipping.toFixed(2)}`
+      }</span>
     </div>
     <div class="d-flex justify-content-between mb-3">
       <span>TAX</span>
@@ -63,4 +69,40 @@ $(function () {
     </div>
   `;
   $(".order-summary").html(itemsHtml);
+
+  // 7. Set Order Date and Arrives By Date
+  function formatDate(date, withDay = false) {
+    const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const months = [
+      "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+      "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+    ];
+    const d = new Date(date);
+    const day = days[d.getDay()];
+    const dateNum = d.getDate();
+    const month = months[d.getMonth()];
+    const year = d.getFullYear();
+    if (withDay) {
+      return `${day}, ${month} ${dateNum}`;
+    }
+    return `${dateNum}${getOrdinal(dateNum)} ${month}, ${year}`;
+  }
+
+  function getOrdinal(n) {
+    return ["th", "st", "nd", "rd"][
+      n % 100 > 10 && n % 100 < 14 ? 0 : (n % 10 > 3 ? 0 : n % 10)
+    ];
+  }
+
+  const now = new Date();
+  const orderDateStr = formatDate(now);
+  const arrivesBy = new Date(now);
+  arrivesBy.setDate(now.getDate() + 7);
+  const arrivesByStr = formatDate(arrivesBy, true);
+
+  // Update Order Date
+  $(".d-box-single:contains('Order Date') b").text(orderDateStr);
+
+  // Update Arrives By Date
+  $(".d-box-single:contains('Arrives by') span").text(arrivesByStr);
 });

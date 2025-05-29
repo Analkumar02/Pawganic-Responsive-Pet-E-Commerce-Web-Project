@@ -52,6 +52,22 @@
                 display: flex;
                 flex-direction: column;
                 gap: 30px;
+                .d-box-single {
+                    .text-muted {
+                        color: var(--color-gray-8) !important;
+                        font-weight: var(--fw-bold);
+                    }
+                    p {
+                        span {
+                            font-size: 20px;
+                            color: var(--btn-color);
+                            font-weight: var(--fw-bold);
+                        }
+                        a {
+                            color: var(--body-color);
+                        }
+                    }
+                }
             }
         }
     }
@@ -82,6 +98,156 @@
         }
         .ck-title {
             font-size: 24px;
+        }
+    }
+}
+
+@media(max-width: 991px) {
+    .order-details {
+        .order-msg {
+            flex-direction: column;
+            margin-bottom: 30px;
+            h2 {
+                gap: 10px;
+                font-size: 28px;
+                span {
+                    font-size: 18px;
+                }
+                .chk-animation {
+                    max-width: 90px;
+                    width: 100%;
+                }
+            }
+        }
+        .order-info {
+            .email-msg {
+                gap: 15px;
+                font-size: 16px;
+                img {
+                    max-width: 30px;
+                }
+            }
+            .delivery-info {
+                margin-top: 30px;
+                font-size: 14px;
+                .d-box {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 30px;
+                    .d-box-single {
+                        p {
+                            span {
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        h3 {
+            font-size: 32px;
+            margin-top: 30px;
+        }
+        .order-summary {
+            background-image: url("../images/breadcrumb-bg.webp");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: #F6F5F7;
+            border-radius: 10px;
+            font-size: 16px;
+            padding: 20px;
+            .pr-title {
+                max-width: 200px;
+            }
+            .ck-pr-box {
+                gap: 15px;
+                max-width: 300px;
+                img {
+                    max-width: 60px;
+                    background-color: var(--color-gray-3);
+                    border: 1px solid var(--theme-primary);
+                    border-radius: 5px;
+                }
+            }
+            .ck-title {
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+@media(max-width: 767px) {
+    .order-details {
+        padding: 50px 0 70px;
+        .order-msg {
+            h2 {
+                gap: 10px;
+                font-size: 18px;
+                span {
+                    font-size: 16px;
+                }
+                .chk-animation {
+                    max-width: 40px;
+                }
+            }
+            .btn {
+                font-size: 14px;
+                padding: 10px 20px 8px;
+            }
+        }
+        .user-msg {
+            h5 {
+                font-size: 18px;
+            }
+            p {
+                font-size: 12px;
+            }
+        }
+        .order-info {
+            padding: 15px 10px;
+            .email-msg {
+                gap: 15px;
+                font-size: 12px;
+                img {
+                    max-width: 25px;
+                }
+            }
+            .delivery-info {
+                margin-top: 20px;
+                font-size: 14px;
+                .d-box {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    margin-bottom: 20px;
+                    .d-box-single {
+                        p {
+                            font-size: 12px;
+                            span {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        h3 {
+            font-size: 24px;
+        }
+        .order-summary {
+            font-size: 12px;
+            padding: 10px;
+            .pr-title {
+                max-width: 200px;
+            }
+            .ck-pr-box {
+                gap: 15px;
+                max-width: 300px;
+            }
+            .ck-title {
+                font-size: 18px;
+                margin-bottom: 24px;
+            }
         }
     }
 }

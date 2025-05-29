@@ -8,11 +8,61 @@ $(function () {
       return {};
     }
   }
+
   function saveOrder(order) {
     localStorage.setItem("order", JSON.stringify(order));
   }
+
   function formatPrice(value) {
     return `$${parseFloat(value).toFixed(2)}`;
+  }
+
+  // Dynamically populate US states in the state select
+  function populateUSStates() {
+    $.ajax({
+      url: "https://countriesnow.space/api/v0.1/countries/states",
+      method: "POST",
+      contentType: "application/json",
+      data: JSON.stringify({ country: "United States" }),
+      success: function (res) {
+        if (res.data && res.data.states) {
+          // Find all state selects (adjust selector as needed)
+          $("select.form-select")
+            .filter(function () {
+              // You may want to use a more specific selector if you have multiple selects
+              return $(this).find("option:selected").text() === "State";
+            })
+            .each(function () {
+              const $select = $(this);
+              $select
+                .empty()
+                .append("<option selected disabled>State</option>");
+              res.data.states.forEach(function (state) {
+                $select.append(
+                  `<option value="${state.name}">${state.name}</option>`
+                );
+              });
+            });
+        }
+      },
+    });
+  }
+
+  // Set country select to United States and disable it
+  function setCountryToUSA() {
+    $("select.form-select")
+      .filter(function () {
+        return $(this).find("option:selected").text() === "Country";
+      })
+      .each(function () {
+        const $select = $(this);
+        $select
+          .empty()
+          .append(
+            '<option selected value="United States">United States</option>'
+          );
+        $select.prop("disabled", true);
+      });
   }
 
   // 2. Render Order Summary
@@ -20,12 +70,14 @@ $(function () {
     const cart = getCart();
     const items = Object.values(cart);
     if (!items.length) {
-      $(".order-summary").html('<div class="text-center">Your cart is empty.</div>');
+      $(".order-summary").html(
+        '<div class="text-center">Your cart is empty.</div>'
+      );
       return;
     }
 
     let subtotal = 0;
-    items.forEach(item => {
+    items.forEach((item) => {
       subtotal += item.price * item.quantity;
     });
 
@@ -52,7 +104,7 @@ $(function () {
       <div class="ck-divider mb-4 mt-4"></div>
     `;
 
-    items.forEach(item => {
+    items.forEach((item) => {
       const itemTotal = item.price * item.quantity;
       summaryHtml += `
         <div class="d-flex justify-content-between mb-2">
@@ -71,7 +123,11 @@ $(function () {
         <span>Shipping</span>
         <span>${shippingText}</span>
       </div>
-      ${subtotal < 50 && subtotal > 0 ? `<div class="free-shipping-msg">Free shipping for orders over $50</div>` : ""}
+      ${
+        subtotal < 50 && subtotal > 0
+          ? `<div class="free-shipping-msg">Free shipping for orders over $50</div>`
+          : ""
+      }
       <div class="d-flex justify-content-between mb-3">
         <span>TAX</span>
         <span>5%</span>
@@ -92,7 +148,8 @@ $(function () {
         </label>
       </div>
       <button type="submit" class="btn btn-pay w-100 mb-3">Proceed To Pay</button>
-      <a href="cart.html" class="btn btn-cart w-100">Return To Cart</a>
+      <a href="cart.html" class="btn btn-cart w-100 mb-3">Return To Cart</a>
+      <p class="d-flex align-items-center justify-content-center"><i class='bx bx-lock-alt me-1'></i> Secure 256 Bit Encrypted Connection</p>
     `;
 
     $(".order-summary").html(summaryHtml);
@@ -111,6 +168,10 @@ $(function () {
 
   // 4. On page load, render order summary if coming from cart
   renderOrderSummary();
+
+  // Call on page load
+  populateUSStates();
+  setCountryToUSA();
 
   // 5. Form validation and submit
   $("#checkout-form").on("submit", function (e) {
@@ -171,8 +232,8 @@ $(function () {
       address2: $form.find('input[placeholder="Address 2"]').eq(0).val(),
       city: $form.find('input[placeholder="City"]').eq(0).val(),
       pincode: $form.find('input[placeholder*="Pincode"]').eq(0).val(),
-      state: $form.find('select').eq(0).val(),
-      country: $form.find('select').eq(1).val()
+      state: $form.find("select").eq(0).val(),
+      country: $form.find("select").eq(1).val(),
     };
 
     let billing;
@@ -180,14 +241,24 @@ $(function () {
       billing = { ...shipping };
     } else {
       billing = {
-        firstName: $form.find('#billing-address input[placeholder="First Name"]').val(),
-        lastName: $form.find('#billing-address input[placeholder="Last Name"]').val(),
-        address1: $form.find('#billing-address input[placeholder="Address 1"]').val(),
-        address2: $form.find('#billing-address input[placeholder="Address 2"]').val(),
+        firstName: $form
+          .find('#billing-address input[placeholder="First Name"]')
+          .val(),
+        lastName: $form
+          .find('#billing-address input[placeholder="Last Name"]')
+          .val(),
+        address1: $form
+          .find('#billing-address input[placeholder="Address 1"]')
+          .val(),
+        address2: $form
+          .find('#billing-address input[placeholder="Address 2"]')
+          .val(),
         city: $form.find('#billing-address input[placeholder="City"]').val(),
-        pincode: $form.find('#billing-address input[placeholder*="Pincode"]').val(),
-        state: $form.find('#billing-address select').eq(0).val(),
-        country: $form.find('#billing-address select').eq(1).val()
+        pincode: $form
+          .find('#billing-address input[placeholder*="Pincode"]')
+          .val(),
+        state: $form.find("#billing-address select").eq(0).val(),
+        country: $form.find("#billing-address select").eq(1).val(),
       };
     }
 
@@ -195,7 +266,9 @@ $(function () {
     const cart = getCart();
     const items = Object.values(cart);
     let subtotal = 0;
-    items.forEach(item => { subtotal += item.price * item.quantity; });
+    items.forEach((item) => {
+      subtotal += item.price * item.quantity;
+    });
 
     // Shipping logic
     let shippingCharge = 0;
@@ -216,7 +289,7 @@ $(function () {
       shipping: shippingCharge,
       total,
       shippingAddress: shipping,
-      billing
+      billing,
     };
 
     // 8. Store order and clear cart

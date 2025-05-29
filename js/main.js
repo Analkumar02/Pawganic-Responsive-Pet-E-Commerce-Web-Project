@@ -279,11 +279,11 @@ $(document).ready(function () {
   });
 
   // ====== Init ======
-  updateCartCount();
-  updateProductBoxes();
-  updateAllQuantityBoxes();
-  updateWishlistCount();
-  applyWishlistStatus();
+    updateCartCount();
+    updateProductBoxes();
+    updateAllQuantityBoxes();
+    updateWishlistCount();
+    applyWishlistStatus();
 
   // ====== Sticky Header ======
   const header = document.getElementById("header");
