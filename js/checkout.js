@@ -1,5 +1,4 @@
 $(function () {
-  // 1. Utility functions
   function getCart() {
     try {
       const cart = JSON.parse(localStorage.getItem("cart"));
@@ -17,32 +16,74 @@ $(function () {
     return `$${parseFloat(value).toFixed(2)}`;
   }
 
-  // --- Dynamically populate US states if country is United States ---
   const US_STATES = [
-    "Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia",
-    "Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts",
-    "Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey",
-    "New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island",
-    "South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia",
-    "Wisconsin","Wyoming"
+    "Alabama",
+    "Alaska",
+    "Arizona",
+    "Arkansas",
+    "California",
+    "Colorado",
+    "Connecticut",
+    "Delaware",
+    "Florida",
+    "Georgia",
+    "Hawaii",
+    "Idaho",
+    "Illinois",
+    "Indiana",
+    "Iowa",
+    "Kansas",
+    "Kentucky",
+    "Louisiana",
+    "Maine",
+    "Maryland",
+    "Massachusetts",
+    "Michigan",
+    "Minnesota",
+    "Mississippi",
+    "Missouri",
+    "Montana",
+    "Nebraska",
+    "Nevada",
+    "New Hampshire",
+    "New Jersey",
+    "New Mexico",
+    "New York",
+    "North Carolina",
+    "North Dakota",
+    "Ohio",
+    "Oklahoma",
+    "Oregon",
+    "Pennsylvania",
+    "Rhode Island",
+    "South Carolina",
+    "South Dakota",
+    "Tennessee",
+    "Texas",
+    "Utah",
+    "Vermont",
+    "Virginia",
+    "Washington",
+    "West Virginia",
+    "Wisconsin",
+    "Wyoming",
   ];
 
   function populateStates($countrySelect, $stateSelect) {
     const country = $countrySelect.val();
     $stateSelect.empty();
     if (country === "United States") {
-      $stateSelect.append('<option selected disabled>State</option>');
-      US_STATES.forEach(state => {
+      $stateSelect.append("<option selected disabled>State</option>");
+      US_STATES.forEach((state) => {
         $stateSelect.append(`<option value="${state}">${state}</option>`);
       });
       $stateSelect.prop("disabled", false);
     } else {
-      $stateSelect.append('<option selected disabled>State</option>');
+      $stateSelect.append("<option selected disabled>State</option>");
       $stateSelect.prop("disabled", true);
     }
   }
 
-  // 2. Render Order Summary
   function renderOrderSummary() {
     const cart = getCart();
     const items = Object.values(cart);
@@ -58,11 +99,10 @@ $(function () {
       subtotal += item.price * item.quantity;
     });
 
-    // Shipping logic
     let shipping = 0;
     let shippingText = "";
     if (subtotal < 50) {
-      shipping = 1; // Changed from 10 to 1
+      shipping = 1;
       shippingText = formatPrice(shipping);
     } else {
       shipping = 0;
@@ -132,7 +172,6 @@ $(function () {
     $(".order-summary").html(summaryHtml);
   }
 
-  // 3. Show/hide billing address
   function toggleBillingAddress() {
     if ($("#diffBilling").is(":checked")) {
       $("#billing-address").hide();
@@ -143,34 +182,29 @@ $(function () {
   $("#diffBilling").on("change", toggleBillingAddress);
   toggleBillingAddress();
 
-  // 4. On page load, render order summary if coming from cart
   renderOrderSummary();
 
-  // Shipping address dynamic state
-  const $shippingCountry = $('select.form-select').eq(1);
-  const $shippingState = $('select.form-select').eq(0);
+  const $shippingCountry = $("select.form-select").eq(1);
+  const $shippingState = $("select.form-select").eq(0);
   $shippingCountry.on("change", function () {
     populateStates($shippingCountry, $shippingState);
   });
-  // Initial population if United States is default
+
   populateStates($shippingCountry, $shippingState);
 
-  // Billing address dynamic state
-  const $billingCountry = $('#billing-address select.form-select').eq(1);
-  const $billingState = $('#billing-address select.form-select').eq(0);
+  const $billingCountry = $("#billing-address select.form-select").eq(1);
+  const $billingState = $("#billing-address select.form-select").eq(0);
   $billingCountry.on("change", function () {
     populateStates($billingCountry, $billingState);
   });
   populateStates($billingCountry, $billingState);
 
-  // 5. Form validation and submit
   $("#checkout-form").on("submit", function (e) {
     e.preventDefault();
     let valid = true;
     let $form = $(this);
     let errorMsg = "";
 
-    // Validate required fields in shipping
     $form.find("input[required], select[required]").each(function () {
       if (!$(this).val().trim()) {
         $(this).addClass("is-invalid");
@@ -180,7 +214,6 @@ $(function () {
       }
     });
 
-    // Email format
     const $email = $form.find('input[type="email"]');
     if ($email.length && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($email.val())) {
       $email.addClass("is-invalid");
@@ -188,7 +221,6 @@ $(function () {
       valid = false;
     }
 
-    // Pincode/Zipcode numeric check
     const $pincode = $form.find('input[placeholder*="Pincode"]');
     if ($pincode.length && !/^\d{4,10}$/.test($pincode.val())) {
       $pincode.addClass("is-invalid");
@@ -196,7 +228,6 @@ $(function () {
       valid = false;
     }
 
-    // If billing address is shown, validate its fields
     if (!$("#diffBilling").is(":checked")) {
       $("#billing-address input, #billing-address select").each(function () {
         if ($(this).attr("required") && !$(this).val().trim()) {
@@ -213,7 +244,6 @@ $(function () {
       return;
     }
 
-    // 6. Gather data
     const shipping = {
       firstName: $form.find('input[placeholder="First Name"]').eq(0).val(),
       lastName: $form.find('input[placeholder="Last Name"]').eq(0).val(),
@@ -252,7 +282,6 @@ $(function () {
       };
     }
 
-    // 7. Order summary
     const cart = getCart();
     const items = Object.values(cart);
     let subtotal = 0;
@@ -260,10 +289,9 @@ $(function () {
       subtotal += item.price * item.quantity;
     });
 
-    // Shipping logic
     let shippingCharge = 0;
     if (subtotal < 50) {
-      shippingCharge = 1; // Changed from 10 to 1
+      shippingCharge = 1;
     } else {
       shippingCharge = 0;
     }
@@ -282,11 +310,9 @@ $(function () {
       billing,
     };
 
-    // 8. Store order and clear cart
     saveOrder(order);
     localStorage.removeItem("cart");
 
-    // 9. Redirect to thank-you page
     window.location.href = "thank-you.html";
   });
 });

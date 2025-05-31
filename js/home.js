@@ -1,4 +1,3 @@
-/*----------Hero slider----------*/
 document.querySelectorAll(".slider-bg").forEach((el) => {
   const bg = el.getAttribute("data-background");
   if (bg) {
@@ -25,16 +24,11 @@ const swiper = new Swiper(".hero-slider", {
     },
   },
 });
-
-// Animate only the .hero-slider div (not its children), once on page load
-gsap.from('.hero-slider', { opacity: 0, y: 50, duration: 1 });
-
-/*----------Hero slider----------*/
+gsap.from(".hero-slider", { opacity: 0, y: 50, duration: 1 });
 
 $(document).ready(function () {
   gsap.registerPlugin(ScrollTrigger);
 
-  /*----------Featured Products Carousel----------*/
   $.getJSON("data/products.json", function (data) {
     const featuredProducts = data.products.filter(
       (product) => product.tags && product.tags.includes("featured")
@@ -46,11 +40,9 @@ $(document).ready(function () {
       const shortName =
         nameWords.slice(0, 7).join(" ") + (nameWords.length > 7 ? "..." : "");
 
-      // Check if product is in cart
       const cart = JSON.parse(localStorage.getItem("cart")) || {};
       const inCart = cart[product.id];
 
-      // Determine whether to show add to cart or quantity box
       const cartControl = inCart
         ? `
         <div class="quantity-box">
@@ -79,7 +71,9 @@ $(document).ready(function () {
         <div class="swiper-slide product-slide">
             <div class="product-box">
                 <div class="product-img position-relative">
-                    <img class="pr-img" src="${product.images[0]}" alt="${product.name}">
+                    <img class="pr-img" src="${product.images[0]}" alt="${
+        product.name
+      }">
                     <div class="add-to-cart">
                         ${cartControl}
                     </div>
@@ -135,22 +129,19 @@ $(document).ready(function () {
       },
     });
 
-    // Animate product-boxes after DOM update
-    gsap.from('.feature-pr-slider .product-box', {
+    gsap.from(".feature-pr-slider .product-box", {
       opacity: 0,
       y: 40,
       scale: 0.96,
       duration: 0.7,
       stagger: 0.15,
       scrollTrigger: {
-        trigger: '.feature-pr-slider',
-        start: 'top 85%',
-      }
+        trigger: ".feature-pr-slider",
+        start: "top 85%",
+      },
     });
   });
-  /*----------Featured Products Carousel----------*/
 
-  /*----------Trending Products----------*/
   $.getJSON("data/products.json", function (data) {
     const trendingProducts = data.products
       .filter((product) => product.tags && product.tags.includes("trending"))
@@ -162,11 +153,9 @@ $(document).ready(function () {
       const shortName =
         nameWords.slice(0, 7).join(" ") + (nameWords.length > 7 ? "..." : "");
 
-      // Check if product is in cart
       const cart = JSON.parse(localStorage.getItem("cart")) || {};
       const inCart = cart[product.id];
 
-      // Determine whether to show add to cart or quantity box
       const cartControl = inCart
         ? `
         <div class="quantity-box">
@@ -233,21 +222,19 @@ $(document).ready(function () {
 
     $("#trending-products-wrapper").html(html);
 
-    // Animate product-boxes after DOM update
-    gsap.from('#trending-products-wrapper .product-box', {
+    gsap.from("#trending-products-wrapper .product-box", {
       opacity: 0,
       y: 40,
       scale: 0.96,
       duration: 0.7,
       stagger: 0.12,
       scrollTrigger: {
-        trigger: '#trending-products-wrapper',
-        start: 'top 90%',
-      }
+        trigger: "#trending-products-wrapper",
+        start: "top 90%",
+      },
     });
   });
 
-  /*----------Top Rated Products----------*/
   $.getJSON("data/products.json", function (data) {
     const topratedProducts = data.products
       .filter((product) => product.tags && product.tags.includes("top"))
@@ -259,11 +246,9 @@ $(document).ready(function () {
       const shortName =
         nameWords.slice(0, 7).join(" ") + (nameWords.length > 7 ? "..." : "");
 
-      // Check if product is in cart
       const cart = JSON.parse(localStorage.getItem("cart")) || {};
       const inCart = cart[product.id];
 
-      // Determine whether to show add to cart or quantity box
       const cartControl = inCart
         ? `
         <div class="quantity-box">
@@ -330,21 +315,19 @@ $(document).ready(function () {
 
     $("#toprated-products-wrapper").html(html);
 
-    // Animate product-boxes after DOM update
-    gsap.from('#toprated-products-wrapper .product-box', {
+    gsap.from("#toprated-products-wrapper .product-box", {
       opacity: 0,
       y: 40,
       scale: 0.96,
       duration: 0.7,
       stagger: 0.12,
       scrollTrigger: {
-        trigger: '#toprated-products-wrapper',
-        start: 'top 90%',
-      }
+        trigger: "#toprated-products-wrapper",
+        start: "top 90%",
+      },
     });
   });
 
-  /*----------Testimonial Carousel----------*/
   var swiper = new Swiper(".testimonial-slider", {
     spaceBetween: 30,
     centeredSlides: true,
@@ -354,182 +337,187 @@ $(document).ready(function () {
       disableOnInteraction: false,
     },
   });
-  /*----------Testimonial Carousel----------*/
 
-  // GSAP Animations (no duplicates)
   gsap.from(".hero-section", { opacity: 0, y: 50, duration: 1 });
-  gsap.from('.hero-section .hero-slide .hero-content h1', { opacity: 0, y: 40, duration: 1 });
-  gsap.from('.hero-section .hero-slide .hero-content p', { opacity: 0, y: 40, duration: 1, delay: 0.3 });
-  gsap.from('.hero-right', { opacity: 0, x: 50, duration: 1, delay: 0.8 });
+  gsap.from(".hero-section .hero-slide .hero-content h1", {
+    opacity: 0,
+    y: 40,
+    duration: 1,
+  });
+  gsap.from(".hero-section .hero-slide .hero-content p", {
+    opacity: 0,
+    y: 40,
+    duration: 1,
+    delay: 0.3,
+  });
+  gsap.from(".hero-right", { opacity: 0, x: 50, duration: 1, delay: 0.8 });
 
-  gsap.from('.feature-area .ft-item', {
+  gsap.from(".feature-area .ft-item", {
     opacity: 0,
     y: 30,
     duration: 0.7,
     stagger: 0.2,
     scrollTrigger: {
-      trigger: '.feature-area',
-      start: 'top 80%',
-    }
+      trigger: ".feature-area",
+      start: "top 80%",
+    },
   });
 
-  gsap.from('.about-img img', {
+  gsap.from(".about-img img", {
     opacity: 0,
     x: -60,
     duration: 1,
     scrollTrigger: {
-      trigger: '.about-area',
-      start: 'top 80%',
-    }
+      trigger: ".about-area",
+      start: "top 80%",
+    },
   });
-  gsap.from('.about-content', {
+  gsap.from(".about-content", {
     opacity: 0,
     x: 60,
     duration: 1,
     delay: 0.2,
     scrollTrigger: {
-      trigger: '.about-area',
-      start: 'top 80%',
-    }
+      trigger: ".about-area",
+      start: "top 80%",
+    },
   });
 
-  gsap.from('.feature-product-area .heading', {
+  gsap.from(".feature-product-area .heading", {
     opacity: 0,
     y: 30,
     duration: 0.7,
     scrollTrigger: {
-      trigger: '.feature-product-area',
-      start: 'top 80%',
-    }
+      trigger: ".feature-product-area",
+      start: "top 80%",
+    },
   });
 
-  gsap.from('.banner-area .img-box-1', {
+  gsap.from(".banner-area .img-box-1", {
     opacity: 0,
     x: -50,
     duration: 1,
     scrollTrigger: {
-      trigger: '.banner-area',
-      start: 'top 80%',
-    }
+      trigger: ".banner-area",
+      start: "top 80%",
+    },
   });
-  gsap.from('.banner-area .banner-content', {
+  gsap.from(".banner-area .banner-content", {
     opacity: 0,
     y: 40,
     duration: 1,
     delay: 0.2,
     scrollTrigger: {
-      trigger: '.banner-area',
-      start: 'top 80%',
-    }
+      trigger: ".banner-area",
+      start: "top 80%",
+    },
   });
-  gsap.from('.banner-area .img-box-2', {
+  gsap.from(".banner-area .img-box-2", {
     opacity: 0,
     x: 50,
     duration: 1,
     delay: 0.4,
     scrollTrigger: {
-      trigger: '.banner-area',
-      start: 'top 80%',
-    }
+      trigger: ".banner-area",
+      start: "top 80%",
+    },
   });
 
-  gsap.from('.trending-area .heading', {
+  gsap.from(".trending-area .heading", {
     opacity: 0,
     y: 30,
     duration: 0.7,
     scrollTrigger: {
-      trigger: '.trending-area',
-      start: 'top 85%',
-    }
+      trigger: ".trending-area",
+      start: "top 85%",
+    },
   });
 
-  gsap.from('.small-banner-area .small-banner-1', {
+  gsap.from(".small-banner-area .small-banner-1", {
     opacity: 0,
     scale: 0.95,
     x: -40,
     duration: 0.8,
     scrollTrigger: {
-      trigger: '.small-banner-area .small-banner-1',
-      start: 'top 90%',
-    }
+      trigger: ".small-banner-area .small-banner-1",
+      start: "top 90%",
+    },
   });
-  gsap.from('.small-banner-area .small-banner-2', {
+  gsap.from(".small-banner-area .small-banner-2", {
     opacity: 0,
     scale: 0.95,
     x: 40,
     duration: 0.8,
     delay: 0.2,
     scrollTrigger: {
-      trigger: '.small-banner-area .small-banner-2',
-      start: 'top 90%',
-    }
+      trigger: ".small-banner-area .small-banner-2",
+      start: "top 90%",
+    },
   });
 
-  gsap.from('.toprated-area .heading', {
+  gsap.from(".toprated-area .heading", {
     opacity: 0,
     y: 30,
     duration: 0.7,
     scrollTrigger: {
-      trigger: '.toprated-area',
-      start: 'top 85%',
-    }
+      trigger: ".toprated-area",
+      start: "top 85%",
+    },
   });
 
-  gsap.from('.testimonial-area .testimonial-slide', {
+  gsap.from(".testimonial-area .testimonial-slide", {
     opacity: 0,
     y: 30,
     duration: 0.7,
     stagger: 0.2,
     scrollTrigger: {
-      trigger: '.testimonial-area',
-      start: 'top 80%',
-    }
+      trigger: ".testimonial-area",
+      start: "top 80%",
+    },
   });
-  gsap.from('.testimonial-img-box img', {
+  gsap.from(".testimonial-img-box img", {
     opacity: 0,
     scale: 0.8,
     duration: 1,
     scrollTrigger: {
-      trigger: '.testimonial-area',
-      start: 'top 80%',
-    }
+      trigger: ".testimonial-area",
+      start: "top 80%",
+    },
   });
 
-  gsap.from('.footer', {
+  gsap.from(".footer", {
     opacity: 0,
     y: 40,
     duration: 1,
     scrollTrigger: {
-      trigger: '.footer',
-      start: 'top 90%',
-    }
+      trigger: ".footer",
+      start: "top 90%",
+    },
   });
 
-  // Trending Banner Animation
-  gsap.from('.trending-banner', {
+  gsap.from(".trending-banner", {
     opacity: 0,
     x: 60,
     scale: 0.96,
     duration: 0.8,
     scrollTrigger: {
-      trigger: '.trending-banner',
-      start: 'top 90%',
-    }
+      trigger: ".trending-banner",
+      start: "top 90%",
+    },
   });
 
-  // Top Rated Banner Animation
-  gsap.from('.toprated-banner', {
+  gsap.from(".toprated-banner", {
     opacity: 0,
     x: -60,
     scale: 0.96,
     duration: 0.8,
     scrollTrigger: {
-      trigger: '.toprated-banner',
-      start: 'top 90%',
-    }
+      trigger: ".toprated-banner",
+      start: "top 90%",
+    },
   });
 
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    gsap.globalTimeline.timeScale(0.01); // Effectively disables animation
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    gsap.globalTimeline.timeScale(0.01);
   }
 });

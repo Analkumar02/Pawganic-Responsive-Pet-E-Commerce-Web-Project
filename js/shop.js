@@ -10,10 +10,9 @@ $.getJSON("data/products.json", function (data) {
 
   const PAGE_SIZE = 6;
   let currentPage = 1;
-  let allProducts = data.products.slice(); // all products, never filtered
-  let filteredProducts = allProducts.slice(); // filtered/sorted products
+  let allProducts = data.products.slice();
+  let filteredProducts = allProducts.slice();
 
-  // --- Sorting ---
   function sortProducts(products, sortValue) {
     let sorted = products.slice();
     if (sortValue === "price-asc") {
@@ -21,11 +20,9 @@ $.getJSON("data/products.json", function (data) {
     } else if (sortValue === "price-desc") {
       sorted.sort((a, b) => b.offerPrice - a.offerPrice);
     }
-    // else default: no sorting
     return sorted;
   }
 
-  // --- Filtering ---
   function filterProducts(products) {
     let checked = $(".category-filter:checked")
       .map(function () {
@@ -36,10 +33,18 @@ $.getJSON("data/products.json", function (data) {
     return products.filter((p) => checked.includes(p.category));
   }
 
-  // --- Clear Filters Button ---
   $("#clear-filters").on("click", function (e) {
     e.preventDefault();
     $(".category-filter").prop("checked", false);
+    localStorage.removeItem("selectedFilters");
+    currentPage = 1;
+    updateAndRender();
+  });
+
+  $("#clear-filters-mobile").on("click", function (e) {
+    e.preventDefault();
+    $(".category-filter").prop("checked", false);
+    localStorage.removeItem("selectedFilters");
     currentPage = 1;
     updateAndRender();
   });
@@ -47,44 +52,77 @@ $.getJSON("data/products.json", function (data) {
   $.getJSON("data/products.json", function (data) {
     if (!data || !data.products) return;
 
-    const topProducts = data.products
-      .filter((p) => p.tags && p.tags.includes("top"))
-      .slice(0, 5);
+    const usedProductIds = new Set();
 
-    let html = "";
-    topProducts.forEach((product) => {
-      const nameWords = product.name.split(" ");
-      const shortName =
-        nameWords.slice(0, 7).join(" ") + (nameWords.length > 7 ? "..." : "");
-      html += `
-      <li>
-        <a href="product-desc.html?id=${product.id}">
-          <div class="pr-box mb-3">
-            <img src="${product.images[0]}" alt="${product.name}">
-            <div class="pr-info">
-              <p>${shortName}</p>
-              <div class="pr-price">
-                <div class="offer-price">$${product.offerPrice.toFixed(2)}</div>
-                <div class="org-price"><strike>$${product.originalPrice.toFixed(
-                  2
-                )}</strike></div>
+    function getUniqueProducts(products, tags, limit) {
+      return products
+        .filter(
+          (p) =>
+            p.tags &&
+            p.tags.some((tag) => tags.includes(tag)) &&
+            !usedProductIds.has(p.id)
+        )
+        .slice(0, limit)
+        .map((product) => {
+          usedProductIds.add(product.id);
+          return product;
+        });
+    }
+    const topProducts = getUniqueProducts(data.products, ["top"], 5);
+    const trendingProducts = getUniqueProducts(data.products, ["trending"], 5);
+    const featuredProducts = getUniqueProducts(data.products, ["featured"], 5);
+
+    function generateProductHTML(products) {
+      return products
+        .map((product) => {
+          const nameWords = product.name.split(" ");
+          const shortName =
+            nameWords.slice(0, 7).join(" ") +
+            (nameWords.length > 7 ? "..." : "");
+          return `
+          <li>
+            <a href="product-desc.html?id=${product.id}">
+              <div class="pr-box mb-3">
+                <img src="${product.images[0]}" alt="${product.name}">
+                <div class="pr-info">
+                  <p>${shortName}</p>
+                  <div class="pr-price">
+                    <div class="offer-price">$${product.offerPrice.toFixed(
+                      2
+                    )}</div>
+                    <div class="org-price"><strike>$${product.originalPrice.toFixed(
+                      2
+                    )}</strike></div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </a>
-      </li>
-    `;
-    });
+            </a>
+          </li>
+        `;
+        })
+        .join("");
+    }
 
-    $("#top-products").html(html);
+    $("#top-products").html(generateProductHTML(topProducts));
+    $("#trending-products").html(generateProductHTML(trendingProducts));
+    $("#featured-products").html(generateProductHTML(featuredProducts));
+
+    var swiper = new Swiper(".sidebar-slider", {
+      spaceBetween: 30,
+      loop: true,
+      centeredSlides: true,
+      grabCursor: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: true,
+      },
+    });
   });
 
-  // --- Results Text ---
   function renderResultsText(total, start, end) {
     $("#results-text").text(`Showing ${start}-${end} of ${total} results`);
   }
 
-  // --- Render Products (same as home page card design) ---
   function renderProducts(products) {
     let container = $("#product-list");
     container.empty();
@@ -165,7 +203,6 @@ $.getJSON("data/products.json", function (data) {
             `);
     });
 
-    // --- GSAP Animation for product-box-area (like trending area) ---
     if (window.gsap && window.ScrollTrigger) {
       gsap.from("#product-list .product-box", {
         opacity: 0,
@@ -181,20 +218,16 @@ $.getJSON("data/products.json", function (data) {
     }
   }
 
-  // --- Pagination ---
   function paginate(products, page, perPage) {
     let start = (page - 1) * perPage;
     return products.slice(start, start + perPage);
   }
 
-  // --- Pagination UI ---
   function renderPagination(total, page, perPage) {
     let totalPages = Math.ceil(total / perPage);
     let $ul = $("#pagination");
     $ul.empty();
     if (totalPages <= 1) return;
-
-    // Page numbers
     for (let i = 1; i <= totalPages; i++) {
       $ul.append(`
                 <li class=" custom-page-item${i === page ? " active" : ""}">
@@ -202,8 +235,6 @@ $.getJSON("data/products.json", function (data) {
                 </li>
             `);
     }
-
-    // Page click
     $ul.find("a:not(.prev):not(.next)").on("click", function (e) {
       e.preventDefault();
       let n = parseInt($(this).text());
@@ -214,7 +245,6 @@ $.getJSON("data/products.json", function (data) {
     });
   }
 
-  // --- Main renderPage ---
   function renderPage() {
     let total = filteredProducts.length;
     let pageProducts = paginate(filteredProducts, currentPage, PAGE_SIZE);
@@ -225,20 +255,15 @@ $.getJSON("data/products.json", function (data) {
     renderPagination(total, currentPage, PAGE_SIZE);
   }
 
-  // --- Filter, Sort, and Render ---
   function updateAndRender() {
-    // Filtering
     filteredProducts = filterProducts(allProducts);
-    // Sorting
     let sortValue = $("#sort-select").val();
     filteredProducts = sortProducts(filteredProducts, sortValue);
-    // Reset to page 1 if current page is out of range
     let totalPages = Math.ceil(filteredProducts.length / PAGE_SIZE);
     if (currentPage > totalPages) currentPage = 1;
     renderPage();
   }
 
-  // --- Event Handlers ---
   $(".category-filter").on("change", function () {
     currentPage = 1;
     updateAndRender();
@@ -248,6 +273,48 @@ $.getJSON("data/products.json", function (data) {
     updateAndRender();
   });
 
-  // Initial render
   updateAndRender();
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const filterBtn = document.querySelector(".filter-mob"); // Button to open the sidebar
+  const sidebar = document.getElementById("mobile-filter-sidebar"); // Sidebar element
+  const closeBtn = document.getElementById("close-mobile-filter"); // Close button
+  const backdrop = document.getElementById("mobile-filter-backdrop"); // Backdrop element
+
+  if (sidebar) {
+    gsap.set(sidebar, { x: "-100%" });
+  }
+
+  if (filterBtn && sidebar && backdrop) {
+    filterBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      gsap.to(sidebar, { x: 0, duration: 0.4, ease: "power3.out" });
+      backdrop.style.opacity = "1";
+      backdrop.style.pointerEvents = "auto";
+    });
+  }
+
+  function closeSidebar() {
+    if (sidebar && backdrop) {
+      gsap.to(sidebar, { x: "-100%", duration: 0.35, ease: "power3.in" });
+      backdrop.style.opacity = "0";
+      backdrop.style.pointerEvents = "none";
+    }
+  }
+  if (closeBtn) closeBtn.addEventListener("click", closeSidebar);
+  if (backdrop) backdrop.addEventListener("click", closeSidebar);
+});
+
+function getQueryParam(param) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(param);
+}
+
+$(document).ready(function () {
+  const category = getQueryParam("category");
+  if (category) {
+    $(`.category-filter[value="${category}"]`).prop("checked", true);
+    updateAndRender();
+  }
 });

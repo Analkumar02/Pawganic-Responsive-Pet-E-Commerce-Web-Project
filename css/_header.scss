@@ -51,6 +51,13 @@
             scale: 0.9;
         }
     }
+    .logo {
+        img {
+            height: auto;
+            width: auto;
+            max-height: 70px;
+        }
+    }
 }
 
 .sticky {
@@ -160,6 +167,12 @@
 }
 
 @media (max-width: 991px) {
+    .topbar {
+        padding: 15px 10px;
+    }
+    .header {
+        padding: 30px 10px;
+    }
     .bottom-bar {
         .nav-menu {
             position: absolute;
@@ -182,12 +195,8 @@
 }
 
 @media (max-width: 767px) {
-    .logo {
-        img {
-            max-height: 36px;
-        }
-    }
     .header {
+        padding: 20px 10px;
         .btm-bar-right {
             gap: 15px;
             li {
@@ -196,6 +205,11 @@
                         max-height: 16px;
                     }
                 }
+            }
+        }
+        .logo {
+            img {
+                max-height: 36px;
             }
         }
     }

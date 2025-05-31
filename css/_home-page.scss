@@ -1,5 +1,3 @@
-/* Hero Section */
-
 .hero-slide {
     text-align: center;
     font-size: 18px;
@@ -136,9 +134,6 @@
     }
 }
 
-
-/* Feature Section */
-
 .feature-area {
     padding: 25px 0 15px;
     .ft-item {
@@ -163,9 +158,6 @@
         }
     }
 }
-
-
-/* About Section */
 
 .about-area {
     padding: 60px 0 80px;
@@ -219,9 +211,6 @@
     }
 }
 
-
-/* Feature Product Section */
-
 .feature-product-area {
     padding: 40px 0 80px;
     .heading {
@@ -266,9 +255,6 @@
     }
 }
 
-
-/* Banner Section */
-
 .banner-area {
     .banner-box {
         background-color: var(--bg-blue);
@@ -305,9 +291,6 @@
         }
     }
 }
-
-
-/* Trending Section */
 
 .trending-area {
     padding: 60px 0 80px;
@@ -358,9 +341,6 @@
         }
     }
 }
-
-
-/* Small Banner Section */
 
 .small-banner-area {
     .small-banner {
@@ -421,9 +401,6 @@
     }
 }
 
-
-/* Top Rated Section */
-
 .toprated-area {
     padding: 60px 0 60px;
     margin-top: 30px;
@@ -473,9 +450,6 @@
         }
     }
 }
-
-
-/* Testimonial Section */
 
 .testimonial-area {
     padding: 40px 0 80px;
@@ -556,6 +530,9 @@
 }
 
 @media (max-width: 991px) {
+    main {
+        padding: 0 10px;
+    }
     .hero-right {
         flex-direction: row;
         justify-content: space-between;
@@ -563,6 +540,9 @@
     }
     .about-area {
         padding: 40px 0;
+        .about-img {
+            text-align: center;
+        }
         .about-content {
             h2 {
                 font-size: 35px;
@@ -728,8 +708,11 @@
             }
         }
     }
+    .feature-area {
+        padding: 25px 10px;
+    }
     .about-area {
-        padding: 40px 0;
+        padding: 40px 15px;
         .about-content {
             h2 {
                 font-size: 35px;
@@ -750,7 +733,7 @@
         }
     }
     .feature-product-area {
-        padding: 40px 0;
+        padding: 40px 10px;
     }
     .banner-area {
         .banner-box {

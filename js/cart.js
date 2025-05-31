@@ -1,4 +1,3 @@
-// ===== Utility =====
 function getCart() {
   try {
     const cart = JSON.parse(localStorage.getItem("cart"));
@@ -34,7 +33,6 @@ function updateTotalPrice() {
     subtotal += item.price * item.quantity;
   });
 
-  // Shipping logic
   let shipping = 0;
   let shippingText = "";
   if (subtotal < 50 && subtotal > 0) {
@@ -52,17 +50,17 @@ function updateTotalPrice() {
   $(".pr-total-price").text(formatPrice(subtotal));
   $(".cart-total .shipping p:last-child").text(shippingText);
 
-  // Show or hide the free shipping message
   let $shippingRow = $(".cart-total .shipping");
   $shippingRow.next(".free-shipping-msg").remove();
   if (subtotal < 50 && subtotal > 0) {
-    $shippingRow.after('<div class="free-shipping-msg" style="font-size: 0.95em; color: #28a745; margin-top: 2px;">Free shipping for orders over $50</div>');
+    $shippingRow.after(
+      '<div class="free-shipping-msg" style="font-size: 0.95em; color: #28a745; margin-top: 2px;">Free shipping for orders over $50</div>'
+    );
   }
 
   $(".grand-total h3:last-child").text(formatPrice(total));
 }
 
-// ===== Render Cart Table =====
 function renderCart() {
   const cart = getCart();
   const items = Object.values(cart);
@@ -125,9 +123,15 @@ function renderCart() {
         </td>
         <td class="text-cell text-center" data-label="Quantity">
           <div class="quantity-box">
-            <button class="qty-btn minus" data-id="${item.id}"><span>-</span></button>
-            <input type="number" class="qty-input" value="${item.quantity}" min="1" data-id="${item.id}">
-            <button class="qty-btn plus" data-id="${item.id}"><span>+</span></button>
+            <button class="qty-btn minus" data-id="${
+              item.id
+            }"><span>-</span></button>
+            <input type="number" class="qty-input" value="${
+              item.quantity
+            }" min="1" data-id="${item.id}">
+            <button class="qty-btn plus" data-id="${
+              item.id
+            }"><span>+</span></button>
           </div>
         </td>
         <td class="text-cell" data-label="Subtotal">
@@ -144,7 +148,6 @@ function renderCart() {
     $tbody.append($row);
   });
 
-  // Shipping logic
   let shipping = 0;
   let shippingText = "";
   if (subtotal < 50 && subtotal > 0) {
@@ -162,18 +165,18 @@ function renderCart() {
   $(".pr-total-price").text(formatPrice(subtotal));
   $(".cart-total .shipping p:last-child").text(shippingText);
 
-  // Show or hide the free shipping message
   let $shippingRow = $(".cart-total .shipping");
   $shippingRow.next(".free-shipping-msg").remove();
   if (subtotal < 50 && subtotal > 0) {
-    $shippingRow.after('<div class="free-shipping-msg">Free shipping for orders over $50</div>');
+    $shippingRow.after(
+      '<div class="free-shipping-msg">Free shipping for orders over $50</div>'
+    );
   }
 
   $(".grand-total h3:last-child").text(formatPrice(total));
   updateCartCount();
 }
 
-// ===== Quantity Update Handlers =====
 function updateQuantity(id, delta) {
   const cart = getCart();
   if (!cart[id]) return;
@@ -202,7 +205,6 @@ function clearCart() {
   renderCart();
 }
 
-// ===== Bind Events =====
 $(document).ready(function () {
   renderCart();
 

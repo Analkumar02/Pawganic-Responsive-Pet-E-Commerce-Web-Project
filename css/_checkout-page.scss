@@ -9,8 +9,19 @@
         .form-control,
         .form-select {
             font-size: 18px;
-            border: 1px solid var(--color-gray-8);
+            border: 1px solid var(--color-gray-6);
             color: var(--color-gray-8);
+            &:checked {
+                background-color: #14AE5C;
+                border-color: #14AE5C;
+            }
+            &:focus {
+                box-shadow: none;
+                border-color: var(--theme-primary);
+            }
+            &::placeholder {
+                color: var(--color-gray-6);
+            }
         }
         .form-select {
             option {
@@ -25,6 +36,10 @@
                 height: 20px;
                 &:checked {
                     background-color: #14AE5C;
+                    border-color: #14AE5C;
+                }
+                &:focus {
+                    box-shadow: none;
                     border-color: #14AE5C;
                 }
             }
@@ -85,6 +100,34 @@
                 }
                 &::before {
                     background: var(--btn-color);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .checkout-area {
+        padding: 50px 10px 70px;
+    }
+}
+
+@media (max-width: 767px) {
+    .checkout-area {
+        padding: 50px 10px 70px;
+        #checkout-form {
+            .form-control,
+            .form-select {
+                font-size: 16px;
+            }
+            .order-summary {
+                padding: 40px 20px;
+                font-size: 14px;
+                .ck-pr-box {
+                    gap: 10px;
+                }
+                .form-check {
+                    margin: 50px 0;
                 }
             }
         }

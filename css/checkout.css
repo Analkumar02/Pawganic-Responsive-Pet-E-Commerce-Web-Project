@@ -39,6 +39,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  touch-action: manipulation;
 }
 
 body {
@@ -69,8 +70,8 @@ button:hover {
 }
 a:focus,
 button:focus {
-  outline: none;
-  box-shadow: none;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .btn,
@@ -278,7 +279,6 @@ thead {
   border-style: none !important;
 }
 
-/*----------Product Box----------*/
 .product-box {
   margin-bottom: 20px;
 }
@@ -298,8 +298,8 @@ thead {
 .product-box .product-img .add-to-cart .btn {
   display: block;
   background-color: var(--btn-color);
-  max-width: 200px;
-  padding: 14px 14px 12px;
+  max-width: 180px;
+  padding: 12px 14px 7px;
   justify-content: center;
   border-radius: 8px;
   margin: 0 auto;
@@ -333,7 +333,7 @@ thead {
   background-color: var(--theme-secondary);
   padding: 6px 6px 5px;
 }
-.product-box .product-img .active .bx {
+.product-box .product-img .wishlist-box .active .bx {
   color: var(--theme-primary);
   background-color: var(--theme-secondary);
   padding: 6px 6px 5px;
@@ -353,7 +353,7 @@ thead {
   color: var(--body-color);
   font-weight: var(--fw-medium);
   display: -webkit-box;
-  line-clamp: 2;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -436,6 +436,47 @@ thead {
   margin: 0;
 }
 
+.product-popup {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  padding: 0.75rem 1rem;
+  min-width: 220px;
+  max-width: 20vw;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: box-shadow 0.2s;
+}
+.product-popup .product-thumb {
+  width: 60px;
+  height: 60px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 6px;
+  border: 2px solid var(--theme-primary);
+  margin-right: 0.75rem;
+}
+.product-popup .popup-content {
+  display: flex;
+  flex-direction: column;
+}
+.product-popup .popup-content .product-name {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 0.25rem;
+  color: #222;
+}
+.product-popup .popup-content .popup-message {
+  font-size: 12px;
+  color: #666;
+}
+
 @media (max-width: 991px) {
   .product-box {
     margin-bottom: 20px;
@@ -458,6 +499,21 @@ thead {
   }
   .product-box .product-img .add-to-cart .btn img {
     margin-right: 5px;
+  }
+  .product-popup {
+    min-width: 160px;
+    padding: 0.5rem 0.75rem;
+    max-width: 70vw;
+  }
+  .product-popup .product-thumb {
+    width: 36px;
+    height: 36px;
+  }
+  .product-popup .popup-content .product-name {
+    font-size: 12px;
+  }
+  .product-popup .popup-content .popup-message {
+    font-size: 10px;
   }
 }
 .topbar {
@@ -510,6 +566,11 @@ thead {
 }
 .header .btm-bar-right li:hover {
   scale: 0.9;
+}
+.header .logo img {
+  height: auto;
+  width: auto;
+  max-height: 70px;
 }
 
 .sticky {
@@ -618,6 +679,12 @@ thead {
 }
 
 @media (max-width: 991px) {
+  .topbar {
+    padding: 15px 10px;
+  }
+  .header {
+    padding: 30px 10px;
+  }
   .bottom-bar .nav-menu {
     position: absolute;
     top: 4rem;
@@ -637,14 +704,17 @@ thead {
   }
 }
 @media (max-width: 767px) {
-  .logo img {
-    max-height: 36px;
+  .header {
+    padding: 20px 10px;
   }
   .header .btm-bar-right {
     gap: 15px;
   }
   .header .btm-bar-right li a img {
     max-height: 16px;
+  }
+  .header .logo img {
+    max-height: 36px;
   }
   .bottom-bar .search-form {
     width: 100%;
@@ -710,7 +780,7 @@ thead {
     max-width: 240px;
   }
   .breadcrumb-area .breadcrumb-box {
-    padding: 80px 15px;
+    padding: 80px 22px;
   }
   .breadcrumb-area .breadcrumb-box h2 {
     font-size: 40px;
@@ -722,7 +792,7 @@ thead {
     max-width: 170px;
   }
   .breadcrumb-area .breadcrumb-box {
-    padding: 60px 10px;
+    padding: 60px 22px;
   }
   .breadcrumb-area .breadcrumb-box h2 {
     font-size: 35px;
@@ -753,8 +823,25 @@ thead {
 .checkout-area #checkout-form .form-control,
 .checkout-area #checkout-form .form-select {
   font-size: 18px;
-  border: 1px solid var(--color-gray-8);
+  border: 1px solid var(--color-gray-6);
   color: var(--color-gray-8);
+}
+.checkout-area #checkout-form .form-control:checked,
+.checkout-area #checkout-form .form-select:checked {
+  background-color: #14AE5C;
+  border-color: #14AE5C;
+}
+.checkout-area #checkout-form .form-control:focus,
+.checkout-area #checkout-form .form-select:focus {
+  box-shadow: none;
+  border-color: var(--theme-primary);
+}
+.checkout-area #checkout-form .form-control::-moz-placeholder, .checkout-area #checkout-form .form-select::-moz-placeholder {
+  color: var(--color-gray-6);
+}
+.checkout-area #checkout-form .form-control::placeholder,
+.checkout-area #checkout-form .form-select::placeholder {
+  color: var(--color-gray-6);
 }
 .checkout-area #checkout-form .form-select option {
   color: var(--color-gray-8);
@@ -769,6 +856,10 @@ thead {
 }
 .checkout-area #checkout-form .form-check .form-check-input:checked {
   background-color: #14AE5C;
+  border-color: #14AE5C;
+}
+.checkout-area #checkout-form .form-check .form-check-input:focus {
+  box-shadow: none;
   border-color: #14AE5C;
 }
 .checkout-area #checkout-form .order-summary {
@@ -829,7 +920,30 @@ thead {
   background: var(--btn-color);
 }
 
-/* Footer Section */
+@media (max-width: 991px) {
+  .checkout-area {
+    padding: 50px 10px 70px;
+  }
+}
+@media (max-width: 767px) {
+  .checkout-area {
+    padding: 50px 10px 70px;
+  }
+  .checkout-area #checkout-form .form-control,
+  .checkout-area #checkout-form .form-select {
+    font-size: 16px;
+  }
+  .checkout-area #checkout-form .order-summary {
+    padding: 40px 20px;
+    font-size: 14px;
+  }
+  .checkout-area #checkout-form .order-summary .ck-pr-box {
+    gap: 10px;
+  }
+  .checkout-area #checkout-form .order-summary .form-check {
+    margin: 50px 0;
+  }
+}
 .footer {
   background-color: var(--theme-secondary);
 }
@@ -897,7 +1011,7 @@ thead {
     background-color: var(--theme-secondary);
   }
   .footer .footer-top {
-    padding: 40px 0 0;
+    padding: 40px 10px 0;
   }
   .footer .footer-top .footer-logo img {
     max-width: 300px;
@@ -921,7 +1035,7 @@ thead {
     margin-bottom: 60px;
   }
   .footer .footer-bottom {
-    padding: 30px 0 50px;
+    padding: 30px 10px 50px;
   }
   .footer .footer-bottom .ft-btm-content {
     flex-direction: column;

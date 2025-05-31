@@ -237,14 +237,18 @@
 
 @media (max-width: 991px) {
     .pr-desc-area {
-        padding: 60px 0 40px;
+        padding: 60px 10px 30px;
         .single-pr-content {
-            margin-top: 60px;
+            margin-top: 40px;
+            .cart-box {
+                margin-bottom: 20px;
+            }
             .safe-checkout {
                 padding: 20px 20px 25px;
                 margin-top: 40px;
                 border: 2px solid var(--color-gray-5);
                 border-radius: 10px;
+                width: auto;
                 p {
                     color: var(--btn-color);
                     font-weight: var(--fw-bold);
@@ -265,11 +269,54 @@
             }
         }
     }
+    .related-product-area {
+        padding: 0 10px 60px;
+        .heading {
+            font-size: 30px;
+            margin-bottom: 35px;
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                background-image: url(../images/heading-paw.svg);
+                height: 18px;
+                width: 19px;
+                top: -10px;
+            }
+        }
+        .related-pr-slider {
+            overflow-x: hidden;
+            .pr-slider-btn {
+                opacity: 0;
+                transition: .4s ease-in-out;
+                top: 35%;
+                &::after {
+                    font-size: 25px;
+                    padding: 12px 18px;
+                    color: var(--theme-secondary);
+                    background-color: var(--theme-primary);
+                    border-radius: 50%;
+                }
+            }
+            &:hover {
+                .pr-slider-btn {
+                    opacity: 1;
+                    transform: translatex(-10px);
+                }
+            }
+        }
+        .pr-slider-prev {
+            left: 25px;
+        }
+        .pr-slider-next {
+            right: 5px;
+        }
+    }
 }
 
 @media (max-width: 767px) {
     .pr-desc-area {
-        padding: 40px 0 60px;
+        padding: 40px 10px 30px;
         .single-pr-content {
             .cart-box {
                 margin-bottom: 20px;

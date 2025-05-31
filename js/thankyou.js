@@ -1,16 +1,11 @@
 $(function () {
-  // 1. Get order data from localStorage
   const order = JSON.parse(localStorage.getItem("order"));
   if (!order) return;
-
-  // 2. Generate a random order ID (or use a real one if you have it)
   const orderId = Math.floor(Math.random() * 900000000 + 100000000);
   $("#order-id").text(`#${orderId}`);
 
-  // 3. Update user name
   $(".user-fname span").text(order.shippingAddress.firstName);
 
-  // 4. Update shipping address
   const shipping = order.shippingAddress;
   const shippingHtml = `
     <p><b>${shipping.firstName} ${shipping.lastName}</b></p>
@@ -22,7 +17,6 @@ $(function () {
     `<p class="text-muted">Shipping Address</p>${shippingHtml}`
   );
 
-  // 5. Update billing address
   const billing = order.billing;
   const billingHtml = `
     <p><b>${billing.firstName} ${billing.lastName}</b></p>
@@ -33,7 +27,6 @@ $(function () {
     `<p class="text-muted">Billing Address</p>${billingHtml}`
   );
 
-  // 6. Update order summary (items, totals, etc.)
   let itemsHtml = "";
   order.items.forEach((item) => {
     itemsHtml += `
@@ -70,12 +63,21 @@ $(function () {
   `;
   $(".order-summary").html(itemsHtml);
 
-  // 7. Set Order Date and Arrives By Date
   function formatDate(date, withDay = false) {
     const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     const months = [
-      "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-      "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
     ];
     const d = new Date(date);
     const day = days[d.getDay()];
@@ -89,9 +91,12 @@ $(function () {
   }
 
   function getOrdinal(n) {
-    return ["th", "st", "nd", "rd"][
-      n % 100 > 10 && n % 100 < 14 ? 0 : (n % 10 > 3 ? 0 : n % 10)
-    ];
+    return [
+      "th",
+      "st",
+      "nd",
+      "rd",
+    ][n % 100 > 10 && n % 100 < 14 ? 0 : n % 10 > 3 ? 0 : n % 10];
   }
 
   const now = new Date();
@@ -100,9 +105,7 @@ $(function () {
   arrivesBy.setDate(now.getDate() + 7);
   const arrivesByStr = formatDate(arrivesBy, true);
 
-  // Update Order Date
   $(".d-box-single:contains('Order Date') b").text(orderDateStr);
 
-  // Update Arrives By Date
   $(".d-box-single:contains('Arrives by') span").text(arrivesByStr);
 });

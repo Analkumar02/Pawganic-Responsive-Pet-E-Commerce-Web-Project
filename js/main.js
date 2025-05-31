@@ -1,7 +1,6 @@
 $(document).ready(function () {
   let singlePrTempQty = 1;
 
-  // Quantity plus
   $(document).on("click", ".single-pr-content .qty-btn.plus", function () {
     const $input = $(".single-pr-content .qty-input");
     const id = $input.data("id");
@@ -17,7 +16,6 @@ $(document).ready(function () {
     }
   });
 
-  // Quantity minus
   $(document).on("click", ".single-pr-content .qty-btn.minus", function () {
     const $input = $(".single-pr-content .qty-input");
     const id = $input.data("id");
@@ -33,7 +31,6 @@ $(document).ready(function () {
     }
   });
 
-  // Manual input
   $(document).on("change", ".single-pr-content .qty-input", function () {
     const $input = $(this);
     const id = $input.data("id");
@@ -50,7 +47,6 @@ $(document).ready(function () {
     }
   });
 
-  // ====== Utilities ======
   function getCart() {
     return JSON.parse(localStorage.getItem("cart")) || {};
   }
@@ -92,16 +88,17 @@ $(document).ready(function () {
 
   function applyWishlistStatus() {
     const wishlist = getWishlist();
+
     $(".add-to-wishlist-btn").each(function () {
       const $btn = $(this);
       const id = $btn.data("id");
+
       const exists = wishlist.some((item) => item.id === id);
       $btn.toggleClass("active", exists);
       $btn.closest(".product-box").toggleClass("active", exists);
     });
   }
 
-  // ====== Update Product Boxes ======
   function updateProductBoxes() {
     const cart = getCart();
 
@@ -133,19 +130,18 @@ $(document).ready(function () {
         `);
       }
     });
+
+    applyWishlistStatus();
   }
 
-  // ====== Update Quantity Boxes in All Areas ======
   function updateAllQuantityBoxes() {
     const cart = getCart();
 
-    // Product cards
     $(".quantity-box .qty-input").each(function () {
       const id = $(this).data("id");
       if (cart[id]) $(this).val(cart[id].quantity);
     });
 
-    // Product detail page
     const $single = $(".single-pr-content .qty-input");
     if ($single.length) {
       const id = $single.data("id");
@@ -153,7 +149,6 @@ $(document).ready(function () {
     }
   }
 
-  // ====== Add to Cart (Product Box) ======
   $(document).on("click", ".product-box .add-to-cart-btn", function (e) {
     e.preventDefault();
     const $btn = $(this);
@@ -172,9 +167,14 @@ $(document).ready(function () {
     updateCartCount();
     updateProductBoxes();
     updateAllQuantityBoxes();
+
+    window.showProductPopup({
+      imageUrl: $btn.data("img"),
+      productName: $btn.data("name"),
+      message: "Added to cart",
+    });
   });
 
-  // ====== Add to Cart (Single Product Page) ======
   $(document).on("click", ".single-pr-content .add-to-cart-btn", function (e) {
     e.preventDefault();
     const $btn = $(this);
@@ -196,7 +196,6 @@ $(document).ready(function () {
     location.reload();
   });
 
-  // ====== Quantity Events (Product Box) ======
   $(document).on(
     "click",
     ".qty-btn.plus:not(.single-pr-content .qty-btn)",
@@ -227,32 +226,6 @@ $(document).ready(function () {
     }
   );
 
-  // ====== Quantity Events (Single Product Page, temp variable) ======
-  // $(document).on("click", ".single-pr-content .qty-btn.plus", function () {
-  //   singlePrTempQty = Math.max(
-  //     1,
-  //     parseInt($(".single-pr-content .qty-input").val()) || 1
-  //   );
-  //   singlePrTempQty += 1;
-  //   $(".single-pr-content .qty-input").val(singlePrTempQty);
-  // });
-
-  // $(document).on("click", ".single-pr-content .qty-btn.minus", function () {
-  //   singlePrTempQty = Math.max(
-  //     1,
-  //     parseInt($(".single-pr-content .qty-input").val()) || 1
-  //   );
-  //   singlePrTempQty -= 1;
-  //   if (singlePrTempQty < 1) singlePrTempQty = 1;
-  //   $(".single-pr-content .qty-input").val(singlePrTempQty);
-  // });
-
-  // $(document).on("change", ".single-pr-content .qty-input", function () {
-  //   singlePrTempQty = Math.max(1, parseInt($(this).val()) || 1);
-  //   $(this).val(singlePrTempQty);
-  // });
-
-  // ====== Wishlist ======
   $(document).on("click", ".add-to-wishlist-btn", function (e) {
     e.preventDefault();
     const $btn = $(this);
@@ -276,16 +249,21 @@ $(document).ready(function () {
 
     saveWishlist(wishlist);
     updateWishlistCount();
+
+    const isAdding = !$btn.hasClass("active");
+    window.showProductPopup({
+      imageUrl: $btn.data("img"),
+      productName: $btn.data("name"),
+      message: isAdding ? "Removed from wishlist" : "Added to wishlist",
+    });
   });
 
-  // ====== Init ======
-    updateCartCount();
-    updateProductBoxes();
-    updateAllQuantityBoxes();
-    updateWishlistCount();
-    applyWishlistStatus();
+  updateCartCount();
+  updateProductBoxes();
+  updateAllQuantityBoxes();
+  updateWishlistCount();
+  applyWishlistStatus();
 
-  // ====== Sticky Header ======
   const header = document.getElementById("header");
   const stickyOffset = header ? header.offsetTop : 0;
 
@@ -298,7 +276,6 @@ $(document).ready(function () {
     }
   });
 
-  // ====== Hide Nav on Outside Click ======
   document.addEventListener("click", (event) => {
     const navMenu = document.querySelector(".nav-menu");
     const menuBtn = document.getElementById("menu-btn");
@@ -321,7 +298,6 @@ $(document).ready(function () {
     });
   }
 
-  /*----------Search Box----------*/
   const $searchForm = $(".search-form");
   const $searchBtn = $("#search-btn");
   const $searchBox = $("#search-box");
@@ -391,5 +367,32 @@ $(document).ready(function () {
       $suggestionsBox.hide();
     }
   });
-  /*----------Search Box----------*/
+
+  window.showProductPopup = function ({ imageUrl, productName, message }) {
+    const popup = document.getElementById("product-popup");
+    if (!popup) return;
+    popup.querySelector(".product-thumb").src = imageUrl;
+    popup.querySelector(".product-name").textContent = productName;
+    popup.querySelector(".popup-message").textContent = message;
+
+    gsap.killTweensOf(popup);
+    gsap.set(popup, { y: 0 });
+
+    gsap.to(popup, {
+      autoAlpha: 1,
+      y: -20,
+      duration: 0.5,
+      pointerEvents: "auto",
+      onComplete: () => {
+        setTimeout(() => {
+          gsap.to(popup, {
+            autoAlpha: 0,
+            y: 0,
+            duration: 0.5,
+            pointerEvents: "none",
+          });
+        }, 2000);
+      },
+    });
+  };
 });

@@ -1,5 +1,4 @@
 $(document).ready(function () {
-  // Get product ID from URL
   const urlParams = new URLSearchParams(window.location.search);
   const productId = urlParams.get("id");
 
@@ -9,7 +8,6 @@ $(document).ready(function () {
     const product = data.products.find((p) => p.id === productId);
     if (!product) return;
 
-    // Prepare images
     const images = product.images || [];
     const imageSlides = images
       .map(
@@ -24,7 +22,6 @@ $(document).ready(function () {
       )
       .join("");
 
-    // Tabs
     let tabs = "";
     let tabContents = "";
     const description = product.description || "";
@@ -68,12 +65,10 @@ $(document).ready(function () {
       return starsHtml;
     }
 
-    // Cart logic
     const cart = JSON.parse(localStorage.getItem("cart")) || {};
     const inCart = cart[product.id];
     const quantity = inCart ? cart[product.id].quantity : 1;
 
-    // Cart box HTML: always show quantity box, button changes
     const cartBoxHtml = `
       <div class="cart-box d-flex align-items-center gap-3">
         <div class="quantity-box">
@@ -101,7 +96,18 @@ $(document).ready(function () {
       </div>
     `;
 
-    // Main HTML
+    const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    const isInWishlist = wishlist.some((item) => item.id === product.id);
+
+    const wishlistButtonHtml = `
+      <a href="#" class="add-to-wishlist-btn"
+        data-id="${product.id}"
+        data-name="${product.name}"
+        data-price="${product.offerPrice}"
+        data-img="${images[0]}">
+        <i class="bx bx-heart"></i>Add to wishlist</a>
+    `;
+
     const html = `
       <div class="container-xl">
         <div class="row">
@@ -133,13 +139,7 @@ $(document).ready(function () {
               <p class="short-desc">${product.shortDesc || ""}</p>
               ${cartBoxHtml}
               <div class="wishlist-box">
-                <a href="#" class="add-to-wishlist-btn"
-                  data-id="${product.id}"
-                  data-name="${product.name}"
-                  data-price="${product.offerPrice}"
-                  data-img="${images[0]}">
-                  <i class="bx bx-heart"></i> Add To Wishlist
-                </a>
+                ${wishlistButtonHtml}
               </div>
               <div class="safe-checkout">
                 <p>Guaranteed Safe Checkout</p>
@@ -160,7 +160,6 @@ $(document).ready(function () {
 
     $(".pr-desc-area").html(html);
 
-    // Swiper init
     new Swiper(".single-pr-slider", {
       loop: true,
       spaceBetween: 10,
@@ -179,7 +178,6 @@ $(document).ready(function () {
       },
     });
 
-    // GSAP animations for product details (after DOM update)
     if (document.querySelector(".single-img-box")) {
       gsap.from(".single-img-box", {
         opacity: 0,
@@ -326,7 +324,6 @@ $.getJSON("data/products.json", function (data) {
     },
   });
 
-  // GSAP animation for related product boxes (after DOM update)
   if (document.querySelector(".related-pr-slider .product-box")) {
     gsap.from(".related-pr-slider .product-box", {
       opacity: 0,
@@ -345,7 +342,6 @@ $.getJSON("data/products.json", function (data) {
 $(document).ready(function () {
   gsap.registerPlugin(ScrollTrigger);
 
-  // Breadcrumb area animation
   if (document.querySelector(".breadcrumb-area .breadcrumb-box")) {
     gsap.from(".breadcrumb-area .breadcrumb-box", {
       opacity: 0,
@@ -369,8 +365,16 @@ $(document).ready(function () {
       },
     });
   }
+  gsap.from(".related-product-area .heading", {
+    opacity: 0,
+    y: 30,
+    duration: 0.7,
+    scrollTrigger: {
+      trigger: ".related-product-area",
+      start: "top 85%",
+    },
+  });
 
-  // Footer animation
   if (document.querySelector(".footer")) {
     gsap.from(".footer", {
       opacity: 0,
@@ -383,7 +387,6 @@ $(document).ready(function () {
     });
   }
 
-  // Accessibility: reduce motion
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     gsap.globalTimeline.timeScale(0.01);
   }
